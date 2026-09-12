@@ -4,8 +4,6 @@ Clare is a fashion catalog starter kit for apparel, accessories, and lifestyle b
 
 The kit ships a full catalog experience: three home layouts, four shop layouts, category landing pages, three product-detail layouts, and blog variants. Shoppers can add items to a **session cart** and send a **cart inquiry** — there is no card checkout or payment capture.
 
-**Live demo:** https://clare-statamic.webbydemo.in/  
-Control Panel: `/cp` — `admin@example.com` / `password`
 
 ## Pages of Clare
 

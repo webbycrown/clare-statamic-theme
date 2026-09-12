@@ -1,0 +1,10 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          - { handle: full_name, field: { type: text, display: 'Full Name', validate: [required] } }
+          - { handle: email, field: { type: text, display: Email, validate: [required, email] } }
+          - { handle: subject, field: { type: text, display: Subject, validate: [required] } }
+          - { handle: message, field: { type: textarea, display: Message, validate: [required] } }

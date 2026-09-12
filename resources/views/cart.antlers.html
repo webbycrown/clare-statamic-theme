@@ -1,0 +1,114 @@
+<main class="site-primary">
+  <section class="heading-banner-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="heading-banner-wrap">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ trans:clare.cart }}</li>
+              </ol>
+            </nav>
+            <h1>{{ trans:clare.cart }}</h1>
+            <div class="heading-banner-img">
+              <img src="/assets/images/heading-banner-img.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{ if clare_cart_count }}
+  <section class="cart-page section-two">
+    <div class="container">
+      {{ if session:cart_ok }}<p class="mb-4">{{ session:cart_ok }}</p>{{ /if }}
+      <div class="row">
+          <div class="col-12 col-lg-8">
+            <form action="/cart/update" method="post">
+              {{ csrf_field }}
+            <table class="table cart-product-table">
+              <thead>
+                <tr>
+                  <th scope="col" class="product-name" style="width:55%;">Product</th>
+                  <th scope="col" class="price">Price</th>
+                  <th scope="col" class="quantity-td">Quantity</th>
+                  <th scope="col" class="total-price">Total</th>
+                  <th scope="col" class="remove"></th>
+                </tr>
+              </thead>
+              <tbody>
+                {{ clare_cart }}
+                <tr>
+                  <td class="product-name">
+                    <div class="cart-product">
+                      <div class="cart-thumb">
+                        <a href="{{ url }}"><img src="{{ image }}" alt="{{ title }}"></a>
+                      </div>
+                      <div class="cart-product-title">
+                        <a href="{{ url }}">{{ title }}</a>
+                        {{ if options_label }}
+                        <p class="cart-variant">{{ options_label }}</p>
+                        {{ /if }}
+                      </div>
+                    </div>
+                  </td>
+                  <td class="price">{{ price_label }}</td>
+                  <td class="quantity-td">
+                    <div class="quantity">
+                      <div class="quantity-button minus">-</div>
+                      <input type="text" class="input-text input-qty text" name="qty[{{ line_id or id }}]" value="{{ qty }}" title="Qty" size="4" autocomplete="off">
+                      <div class="quantity-button plus">+</div>
+                    </div>
+                  </td>
+                  <td class="total-price">{{ total_label }}</td>
+                  <td class="remove">
+                    <button type="submit" form="remove-{{ line_id or id }}" class="remove-icon" aria-label="Remove"><span class="ti-trash"></span></button>
+                  </td>
+                </tr>
+                {{ /clare_cart }}
+              </tbody>
+            </table>
+            <div class="cart-footer">
+              <div class="update-cart-btn">
+                <button type="submit" class="update-cart btn btn-dark">{{ trans:clare.update_cart }} <span class="ti-reload"></span></button>
+              </div>
+            </div>
+            </form>
+          </div>
+          <div class="col-12 col-lg-4">
+            <div class="cart-sidebar">
+              <div class="cart-total-body">
+                <h4>{{ trans:clare.cart_total }}</h4>
+                <div class="cart-list">
+                  <h6>{{ trans:clare.subtotal }}</h6>
+                  <span>{{ clare_cart_subtotal }}</span>
+                </div>
+                <p class="mt-3">This catalog has no checkout. Send an inquiry and we will reply by email with size or availability help.</p>
+                {{ partial:cart-inquiry }}
+                <a href="/shop" class="btn btn-outline-dark w-100 mt-3">{{ trans:clare.continue_shopping }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {{ clare_cart }}
+      <form id="remove-{{ line_id or id }}" action="/cart/remove" method="post" class="d-none">
+        {{ csrf_field }}
+        <input type="hidden" name="id" value="{{ line_id or id }}">
+      </form>
+      {{ /clare_cart }}
+    </div>
+  </section>
+  {{ else }}
+  <section class="empty-cart-page section-two">
+    <div class="container">
+      <div class="empty-cart-content">
+        <h3>{{ trans:clare.empty_cart }}</h3>
+        <p>{{ trans:clare.empty_cart_help }}</p>
+        <a href="/shop" class="btn btn-dark">{{ trans:clare.return_shop }}</a>
+      </div>
+    </div>
+  </section>
+  {{ /if }}
+</main>

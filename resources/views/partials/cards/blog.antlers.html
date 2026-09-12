@@ -1,0 +1,10 @@
+<div class="blog-post">
+  <div class="blog-thumbnail">
+    <a href="{{ url }}">{{ if image }}<img src="{{ image:url }}" alt="{{ title }}">{{ /if }}</a>
+  </div>
+  <div class="blog-content">
+    {{ if date }}<span class="date">{{ date format="d M Y" }}</span>{{ /if }}
+    <h3 class="entry-title"><a href="{{ url }}">{{ title }}</a></h3>
+    {{ if excerpt }}<p>{{ excerpt }}</p>{{ /if }}
+  </div>
+</div>

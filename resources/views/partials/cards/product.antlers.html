@@ -1,0 +1,20 @@
+<div class="product product-style-3">
+  <div class="product-thumbnail">
+    <a href="{{ url }}" class="thumbnail">
+      {{ if image }}<img src="{{ image:url }}" alt="{{ title }}">{{ /if }}
+    </a>
+    {{ if badge }}<div class="product-badges"><span class="badge onsale">{{ badge }}</span></div>{{ /if }}
+    <div class="product-hover-button">
+      <form action="/cart/add" method="post" class="clare-add-to-cart">
+        {{ csrf_field }}
+        <input type="hidden" name="id" value="{{ id }}">
+        <button type="submit" class="select-option-btn">{{ trans:clare.add_to_cart }}</button>
+      </form>
+    </div>
+  </div>
+  <div class="product-content">
+    {{ if label }}<h6>{{ label }}</h6>{{ /if }}
+    <h3 class="product-title"><a href="{{ url }}">{{ title }}</a></h3>
+    {{ if price }}<span class="price"><ins>{{ price | clare_money }}</ins>{{ if compare_price }} <del>{{ compare_price | clare_money }}</del>{{ /if }}</span>{{ /if }}
+  </div>
+</div>

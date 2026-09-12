@@ -1,0 +1,6 @@
+tree:
+  - { title: Home, url: / }
+  - { title: Shop, url: /shop }
+  - { title: About, url: /about }
+  - { title: Blog, url: /blog }
+  - { title: Contact, url: /contact }

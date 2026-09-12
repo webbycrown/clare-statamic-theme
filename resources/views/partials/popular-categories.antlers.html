@@ -1,0 +1,33 @@
+<div class="popular-categories-grid">
+  {{ taxonomy:product_category sort="home_order" }}
+    {{ if v3 }}
+      {{ if home_v3 }}
+      <div class="popular-categories">
+        <div class="popular-categories-img">
+          <a href="/categories/{{ slug }}">
+            {{ if image }}<img src="{{ image:url }}" alt="{{ title }}">
+            {{ else }}<img src="/assets/images/popular-categories-img1.jpg" alt="{{ title }}">{{ /if }}
+          </a>
+        </div>
+        <div class="popular-categories-title">
+          <h6><a href="/categories/{{ slug }}">{{ title }}</a></h6>
+        </div>
+      </div>
+      {{ /if }}
+    {{ else }}
+      {{ if home_order }}
+      <div class="popular-categories">
+        <div class="popular-categories-img">
+          <a href="/categories/{{ slug }}">
+            {{ if image }}<img src="{{ image:url }}" alt="{{ title }}">
+            {{ else }}<img src="/assets/images/categories-img1.jpg" alt="{{ title }}">{{ /if }}
+          </a>
+        </div>
+        <div class="popular-categories-title">
+          <h6><a href="/categories/{{ slug }}">{{ title }}</a></h6>
+        </div>
+      </div>
+      {{ /if }}
+    {{ /if }}
+  {{ /taxonomy:product_category }}
+</div>

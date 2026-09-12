@@ -1,0 +1,6 @@
+title: 'Product inquiry'
+honeypot: fax
+email:
+  -
+    to: clare@gmail.com
+    subject: 'Product inquiry'

@@ -1,0 +1,10 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          - { handle: product, field: { type: text, display: Product } }
+          - { handle: name, field: { type: text, display: Name, validate: [required] } }
+          - { handle: email, field: { type: text, display: Email, validate: [required, email] } }
+          - { handle: message, field: { type: textarea, display: Message, validate: [required] } }

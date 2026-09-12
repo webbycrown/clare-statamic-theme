@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+{{ partial:header-link }}
+<body class="js no-scroll">
+  <div class="wrapper">
+    <div class="preloader">
+      <div class="preloader-inner">
+        {{ setting }}
+        {{ if logo }}{{ logo }}<img src="{{ url }}" alt="{{ site:name }}">{{ /logo }}{{ else }}<img src="/assets/images/loader-icon.svg" alt="{{ site:name }}">{{ /if }}
+        {{ /setting }}
+        <div class="preloader-icon"><span></span><span></span></div>
+      </div>
+    </div>
+    {{ setting }}
+    {{ partial:{{ header_select ?? 'header' }} }}
+    {{ /setting }}
+    {{ template_content }}
+    {{ setting }}
+    {{ partial:{{ footer_select ?? 'footer' }} }}
+    {{ /setting }}
+  </div>
+  {{ partial:popups }}
+  {{ partial:search-index }}
+  {{ partial:footer-link }}
+</body>
+</html>

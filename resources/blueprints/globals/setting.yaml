@@ -1,0 +1,6 @@
+title: Setting
+fields:
+  - { handle: logo, field: { type: assets, container: assets, max_files: 1 } }
+  - { handle: favicon, field: { type: assets, container: assets, max_files: 1 } }
+  - { handle: header_select, field: { type: select, options: { header: 'Header 1', header-two: 'Header 2', header-three: 'Header 3' }, default: header } }
+  - { handle: footer_select, field: { type: select, options: { footer: 'Footer 1', footer-two: 'Footer 2', footer-three: 'Footer 3' }, default: footer } }

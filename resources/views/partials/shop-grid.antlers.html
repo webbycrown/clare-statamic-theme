@@ -1,0 +1,19 @@
+<div class="row">
+  {{ clare_products paginate="12" }}
+  <div class="{{ col or 'col-12 col-sm-6 col-md-4 col-lg-3 mb-4' }}">
+    {{ partial:cards/product }}
+  </div>
+  {{ /clare_products }}
+  {{ if {clare_products:count} == 0 }}
+  <div class="col-12">
+    <div class="shop-empty">
+      <h3>No products found</h3>
+      <p>Nothing matches this price or filter. Try another range or clear the filters.</p>
+      <a class="btn btn-dark" href="/shop">Clear filters</a>
+    </div>
+  </div>
+  {{ /if }}
+  <div class="col-12">
+    {{ partial:shop-pagination }}
+  </div>
+</div>

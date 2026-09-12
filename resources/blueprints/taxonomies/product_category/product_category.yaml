@@ -1,0 +1,6 @@
+title: Category
+fields:
+  - { handle: title, field: { type: text, required: true } }
+  - { handle: image, field: { type: assets, container: assets, max_files: 1 } }
+  - { handle: home_order, field: { type: integer, display: 'Home order' } }
+  - { handle: home_v3, field: { type: toggle, display: 'Show on Home V3' } }

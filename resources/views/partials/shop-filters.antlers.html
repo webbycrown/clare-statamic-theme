@@ -1,0 +1,89 @@
+<div class="shop-filter-form" id="shop-filter-form">
+  <div class="sidebar-widget">
+    <h4 class="widget-title">Categories</h4>
+    <div class="sidebar-widget-body">
+      <ul class="checkbox-categories-list">
+        {{ taxonomy:product_category }}
+        <li>
+          <a href="{{ clare_products:url key="category" :value="slug" }}" class="checkcontainer{{ if get:category | contains:slug }} is-active{{ /if }}">
+            <span class="checkmark"></span> {{ title }}
+          </a>
+        </li>
+        {{ /taxonomy:product_category }}
+      </ul>
+    </div>
+  </div>
+
+  <div class="sidebar-widget">
+    <h4 class="widget-title">Colours</h4>
+    <div class="sidebar-widget-body">
+      <ul class="checkbox-color-list">
+        <li><a href="{{ clare_products:url key="color" value="cream" }}" class="checkcontainer{{ if get:color == 'cream' }} is-active{{ /if }}" style="background-color:#F5E5C5;" title="Cream"><span class="checkmark"></span></a></li>
+        <li><a href="{{ clare_products:url key="color" value="brown" }}" class="checkcontainer{{ if get:color == 'brown' }} is-active{{ /if }}" style="background-color:#591E1E;" title="Brown"><span class="checkmark"></span></a></li>
+        <li><a href="{{ clare_products:url key="color" value="red" }}" class="checkcontainer{{ if get:color == 'red' }} is-active{{ /if }}" style="background-color:#AC1D1D;" title="Red"><span class="checkmark"></span></a></li>
+        <li><a href="{{ clare_products:url key="color" value="navy" }}" class="checkcontainer{{ if get:color == 'navy' }} is-active{{ /if }}" style="background-color:#4376A5;" title="Navy"><span class="checkmark"></span></a></li>
+        <li><a href="{{ clare_products:url key="color" value="green" }}" class="checkcontainer{{ if get:color == 'green' }} is-active{{ /if }}" style="background-color:#30C651;" title="Green"><span class="checkmark"></span></a></li>
+        <li><a href="{{ clare_products:url key="color" value="pink" }}" class="checkcontainer{{ if get:color == 'pink' }} is-active{{ /if }}" style="background-color:#FEA0A5;" title="Pink"><span class="checkmark"></span></a></li>
+        <li><a href="{{ clare_products:url key="color" value="black" }}" class="checkcontainer{{ if get:color == 'black' }} is-active{{ /if }}" style="background-color:#000000;" title="Black"><span class="checkmark"></span></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sidebar-widget">
+    <h4 class="widget-title">Sizes</h4>
+    <div class="sidebar-widget-body">
+      <ul class="checkbox-sizes-list">
+        <li><a href="{{ clare_products:url key="size" value="XS" }}" class="checkcontainer{{ if get:size == 'XS' }} is-active{{ /if }}"><span class="checkmark">XS</span></a></li>
+        <li><a href="{{ clare_products:url key="size" value="S" }}" class="checkcontainer{{ if get:size == 'S' }} is-active{{ /if }}"><span class="checkmark">S</span></a></li>
+        <li><a href="{{ clare_products:url key="size" value="M" }}" class="checkcontainer{{ if get:size == 'M' }} is-active{{ /if }}"><span class="checkmark">M</span></a></li>
+        <li><a href="{{ clare_products:url key="size" value="L" }}" class="checkcontainer{{ if get:size == 'L' }} is-active{{ /if }}"><span class="checkmark">L</span></a></li>
+        <li><a href="{{ clare_products:url key="size" value="XL" }}" class="checkcontainer{{ if get:size == 'XL' }} is-active{{ /if }}"><span class="checkmark">XL</span></a></li>
+        <li><a href="{{ clare_products:url key="size" value="XXL" }}" class="checkcontainer{{ if get:size == 'XXL' }} is-active{{ /if }}"><span class="checkmark">XXL</span></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sidebar-widget">
+    <h4 class="widget-title">Price</h4>
+    <div class="sidebar-widget-body">
+      <ul class="checkbox-price-list">
+        <li>
+          <a href="{{ clare_products:url key="price" value="all" }}" class="price-filter{{ if !get:price || get:price == 'all' }} is-active{{ /if }}">
+            <span class="price-filter-box"></span>
+            <span class="price-filter-text">All</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ clare_products:url key="price" value="0-40" }}" class="price-filter{{ if get:price == '0-40' || get:price == '0-680' }} is-active{{ /if }}">
+            <span class="price-filter-box"></span>
+            <span class="price-filter-text">{{ 0 | clare_money }} – {{ 40 | clare_money }}</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ clare_products:url key="price" value="40-80" }}" class="price-filter{{ if get:price == '40-80' || get:price == '680-1360' }} is-active{{ /if }}">
+            <span class="price-filter-box"></span>
+            <span class="price-filter-text">{{ 40 | clare_money }} – {{ 80 | clare_money }}</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ clare_products:url key="price" value="80-150" }}" class="price-filter{{ if get:price == '80-150' || get:price == '1360-2040' }} is-active{{ /if }}">
+            <span class="price-filter-box"></span>
+            <span class="price-filter-text">{{ 80 | clare_money }} – {{ 150 | clare_money }}</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ clare_products:url key="price" value="150-500" }}" class="price-filter{{ if get:price == '150-500' || get:price == '2040-2720' }} is-active{{ /if }}">
+            <span class="price-filter-box"></span>
+            <span class="price-filter-text">{{ 150 | clare_money }} – {{ 500 | clare_money }}</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ clare_products:url key="price" value="500" }}" class="price-filter{{ if get:price == '500' || get:price == '2720' }} is-active{{ /if }}">
+            <span class="price-filter-box"></span>
+            <span class="price-filter-text">{{ 500 | clare_money }}+</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

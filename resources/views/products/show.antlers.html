@@ -1,0 +1,498 @@
+<!-- site-primary -->
+		<main class="site-primary">
+
+			<!-- heading banner section -->
+			<section class="heading-banner-section">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<!-- column -->
+						<div class="col-12">
+							<!-- heading banner wrap-->
+							<div class="heading-banner-wrap">
+								<!-- breadcrumb -->
+								<nav aria-label="breadcrumb">
+									<ol class="breadcrumb">
+										<li class="breadcrumb-item"><a href="/">Home</a></li>
+										<li class="breadcrumb-item active" aria-current="page">Product detail</li>
+									</ol>
+								</nav>
+								<!-- page title -->
+								<h1>Product detail</h1>
+
+								<!-- heading banner img -->
+								<div class="heading-banner-img">
+									<img src="/assets/images/heading-banner-img.png" alt="heading banner img">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</section>
+			<!--/ End Hero slider section -->
+
+			<!-- Product detail page section -->
+			<section class="product-detail-page section-two">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<!-- column -->
+						<div class="col-12 col-lg-6">
+							<!-- product gallery column -->
+							<div class="product-gallery-column">
+								<div class="product-gallery-vertical">
+									<div class="swiper mySwiper2 big-gallery">
+										<div class="swiper-wrapper">
+											<div class="swiper-slide">
+												<div class="full-product-img"><img src="/assets/images/product-gallery-img1.jpg"  alt="product img"></div>
+											</div>
+											<div class="swiper-slide">
+												<div class="full-product-img"><img src="/assets/images/last-chance-sale-img1.jpg"  alt="product img"></div>
+											</div>
+											<div class="swiper-slide">
+												<div class="full-product-img"><img src="/assets/images/last-chance-sale-img2.jpg"  alt="product img"></div>
+											</div>
+										</div>
+										<div class="swiper-button-next"><span class="ti-arrow-right"></span></div>
+										<div class="swiper-button-prev"><span class="ti-arrow-left"></span></div>
+									</div>
+
+									<div class="swiper mySwiper thumbs-gallery">
+										<div class="swiper-wrapper">
+											<div class="swiper-slide">
+												<div class="thumbs"><img src="/assets/images/product-gallery-img1.jpg"  alt="product img"></div>
+											</div>
+											<div class="swiper-slide">
+												<div class="thumbs"><img src="/assets/images/last-chance-sale-img1.jpg"  alt="product img"></div>
+											</div>
+											<div class="swiper-slide">
+												<div class="thumbs"><img src="/assets/images/last-chance-sale-img2.jpg"  alt="product img"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- column -->
+						<div class="col-12 col-lg-6">
+							<!-- product info -->
+							<div class="product-info">
+								<h2 class="product_title">{{ title }}</h2>
+								<div class="price">{{ price | clare_money }}</div>
+								<p class="people-viewing"><i class="fa-solid fa-eye"></i> 13 people are viewing this right now</p>
+
+								{{ partial:product-add-to-cart }}
+
+									<!-- product extra buttons-->
+									<div class="product-extra-buttons">
+										<a href="#product-inquiry" class="clare-ask-toggle" aria-expanded="false"><img src="/assets/images/question-icon.svg"  alt="question-icon"> Ask a question</a>
+									</div>
+									{{ partial:product-inquiry }}
+
+									<!-- product meta -->
+									<div class="product-meta">
+										<div class="product-meta-list">
+											<span>Estimated Delivery: </span>
+											<span class="meta">Jan 31 - 07 Feb, 2023</span>
+										</div>
+										<div class="product-meta-list">
+											<span>Free Shipping & Returns:</span>
+											<span class="meta">On all orders over $200.00</span>
+										</div>
+									</div>
+
+							</div>
+						</div>
+					</div>
+
+					<!-- row -->
+					<div class="row">
+						<!-- column -->
+						<div class="col-12">
+							<div class="wc-tabs-wrapper">
+								<!-- Product tabs -->
+								<ul class="tabs wc-tabs">
+									<li class="active" data-tab="tab-description">Description</li>
+									<li data-tab="tab-information">Additional Information</li>
+									<li data-tab="tab-reviews">Reviews (0)</li>
+									<li data-tab="tab-questions">Questions</li>
+								</ul>
+
+								<!-- tabs entry content -->
+								<div id="tab-description" class="tabs-entry-content active">
+									<p>{{ if excerpt }}{{ excerpt }}{{ else }}Cut for everyday wear, this piece uses a calm colour and a fabric that holds its shape.{{ /if }}</p>
+									{{ if content }}<p>{{ content }}</p>{{ /if }}
+									<ul>
+										<li>Made for everyday city wear</li>
+										<li>Quiet colour that layers easily</li>
+										<li>Cloth chosen for warmth without bulk</li>
+										<li>Clean collar and a simple close</li>
+										<li>Works over a knit or on its own</li>
+										<li>Send an inquiry for size help</li>
+									</ul>
+								</div>
+								<!-- tabs entry content -->
+								<div id="tab-information" class="tabs-entry-content">
+									<ul class="product_features">
+	                                    {{ partial:product-option-facts }}
+	                                </ul>
+								</div>
+								<!-- tabs entry content -->
+								<div id="tab-reviews" class="tabs-entry-content">
+                                    <div class="row client-review-header align-items-center gx-0">
+                                        <div class="col-md-8">
+                                            <h2>Customer Reviews</h2>
+                                            <ul class="ratings list-style">
+                                                <li><i class="fa-solid fa-star"></i></li>
+                                                <li><i class="fa-solid fa-star"></i></li>
+                                                <li><i class="fa-solid fa-star"></i></li>
+                                                <li><i class="fa-solid fa-star"></i></li>
+                                                <li><i class="fa-solid fa-star"></i></li>
+                                            </ul>
+                                            <p>Based on 2 Reviews</p>
+                                        </div>
+                                        <div class="col-md-4 text-md-end">
+                                            <a href="#cmt-form" class="btn btn-primary">Write A Review</a>
+                                        </div>
+                                    </div>
+                                    <div class="client-review">
+                                        <div class="comment-item-wrap">
+                                            <div class="comment-item d-flex flex-wrap">
+                                                <div class="comment-author-img">
+                                                    <img src="/assets/images/best-sellers-img7.jpg" alt="Image">
+                                                </div>
+                                                <div class="comment-author-wrap">
+                                                    <div class="comment-author-info">
+                                                        <div class="row align-items-start">
+                                                            <div class="col-md-7 col-sm-12 col-12 order-md-1 order-sm-1 order-1">
+                                                                <div class="comment-author-name">
+                                                                    <h5>Olivic Dsuza</h5>
+                                                                    <span class="comment-date">Jun 22, 2022 | 7:10 PM</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-5 col-sm-12 col-12 text-md-end order-md-2 order-sm-3 order-3">
+                                                                <a href="#cmt-form" class="reply-btn">Report As Inappropriate</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="comment-text">
+                                                    <p>The coat arrived as shown: heavy enough for a cold morning, easy over a knit, and the collar sits clean. I asked about sizing through the inquiry form and had a clear reply the same day.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="comment-item d-flex flex-wrap">
+                                                <div class="comment-author-img">
+                                                    <img src="/assets/images/best-sellers-img4.jpg" alt="Image">
+                                                </div>
+                                                <div class="comment-author-wrap">
+                                                    <div class="comment-author-info">
+                                                        <div class="row align-items-start">
+                                                            <div class="col-md-7 col-sm-12 col-12 order-md-1 order-sm-1 order-1">
+                                                                <div class="comment-author-name">
+                                                                    <h5>Michel Jackson</h5>
+                                                                    <span class="comment-date">Jun 22, 2022 | 7:10 PM</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-5 col-sm-12 col-12 text-md-end order-md-2 order-sm-3 order-3">
+                                                                <a href="#cmt-form" class="reply-btn">Report As Inappropriate</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="comment-text">
+                                                        <p>The coat arrived as shown: heavy enough for a cold morning, easy over a knit, and the collar sits clean. I asked about sizing through the inquiry form and had a clear reply the same day.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="cmt-form" class="client-form">
+                                            <div class="comment-box-title mb-25">
+                                                <h4>Write Your Review</h4>
+                                            </div>
+                                            <form action="/shop" class="comment-form">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <input type="text" name="name" id="name" required="" placeholder="Your Name*">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <input type="email" name="email" id="email" required="" placeholder="Email Address*">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group">
+                                                            <input type="url" name="website" id="website" placeholder="Website">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group">
+                                                            <textarea name="messages" id="messages" cols="30" rows="10" placeholder="Please Enter Your Comment Here"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row align-items-center">
+                                                    <div class="col-md-12">
+                                                        <button class="btn btn-dark btn-style-2">Post A Review</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+								</div>
+								<!-- tabs entry content -->
+								<div id="tab-questions" class="tabs-entry-content">
+									<div class="accordion">
+										<!-- accordion list -->
+										<div class="accordion-list">
+											<!-- accordion title -->
+											<h4 class="accordion-title active">Shipping destinations</h4>
+											<!-- accordion content -->
+											<div class="accordion-content actives">
+												<p>For now we ship to the following countries: Austria, Belgium, Czech Republic, Lithuania, Luxembourg, Latvia, Slovakia, Hungary, Bulgaria, Romania, Slovenia, Finland, Denmark, Estonia, Netherlands, Germany, France, Great Britain, Croatia, Ireland, Sweden, Italy, Greece, Spain, Portugal and Poland.</p>
+											</div>
+										</div>
+										<!-- accordion list -->
+										<div class="accordion-list">
+											<!-- accordion title -->
+											<h4 class="accordion-title">Shipping times</h4>
+											<!-- accordion content -->
+											<div class="accordion-content">
+												<p>For now we ship to the following countries: Austria, Belgium, Czech Republic, Lithuania, Luxembourg, Latvia, Slovakia, Hungary, Bulgaria, Romania, Slovenia, Finland, Denmark, Estonia, Netherlands, Germany, France, Great Britain, Croatia, Ireland, Sweden, Italy, Greece, Spain, Portugal and Poland.</p>
+											</div>
+										</div>
+										<!-- accordion list -->
+										<div class="accordion-list">
+											<!-- accordion title -->
+											<h4 class="accordion-title">Tracking your parcel</h4>
+											<!-- accordion content -->
+											<div class="accordion-content">
+												<p>For now we ship to the following countries: Austria, Belgium, Czech Republic, Lithuania, Luxembourg, Latvia, Slovakia, Hungary, Bulgaria, Romania, Slovenia, Finland, Denmark, Estonia, Netherlands, Germany, France, Great Britain, Croatia, Ireland, Sweden, Italy, Greece, Spain, Portugal and Poland.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--/ End Product detail page section -->
+
+			<!-- related products section -->
+			<section class="related-products-section">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<!-- column -->
+						<div class="col-12">
+							<h2 class="entry-title">Related products</h2>
+						</div>
+						<!-- column -->
+						<div class="col-12 col-sm-6 col-md-3">
+							<!-- Product -->
+							<div class="product product-style-3">
+								<!-- product thumbnail -->
+								<div class="product-thumbnail">
+									<a href="javascript:;" class="thumbnail"><img src="/assets/images/best-sellers-img1.jpg" alt="best sellers products img"></a>
+
+									<!-- -->
+									<div class="product-badges">
+										<span class="badge  onsale">-15%</span>
+									</div>
+
+									<!-- product hover button -->
+									<div class="product-hover-button">
+										<a href="javascript:;" class="select-option-btn">Select option</a>
+									</div>
+
+									<!-- product buttons icon-->
+									<div class="product-buttons-icon">
+										<a href="#product-quick-popup" class="arrow-icon quick-view-link"><span class="ti-eye"></span></a>
+										<a href="/shop" class="arrow-icon"><span class="ti-shopping-cart"></span></a>
+										<a href="/account" class="arrow-icon"><span class="ti-heart"></span></a>
+									</div>
+								</div>
+								<!-- product content -->
+								<div class="product-content">
+									<!-- product tile -->
+									<h3 class="product-title">
+										<a href="javascript:;">Coastal Linen S/S Shirt</a>
+									</h3>
+									<!-- product price -->
+									<span class="price"><ins>{{ 499.00 | clare_money }}</ins></span>
+								</div>
+							</div>
+						</div>
+						<!-- column -->
+						<div class="col-12 col-sm-6 col-md-3">
+							<!-- Product -->
+							<div class="product product-style-3">
+								<!-- product thumbnail -->
+								<div class="product-thumbnail">
+									<a href="javascript:;" class="thumbnail"><img src="/assets/images/best-sellers-img2.jpg" alt="best sellers products img"></a>
+
+									<!-- -->
+									<div class="product-badges">
+										<span class="badge  onsale">-15%</span>
+									</div>
+
+									<!-- product hover button -->
+									<div class="product-hover-button">
+										<a href="javascript:;" class="select-option-btn">Select option</a>
+									</div>
+
+									<!-- product buttons icon-->
+									<div class="product-buttons-icon">
+										<a href="#product-quick-popup" class="arrow-icon quick-view-link"><span class="ti-eye"></span></a>
+										<a href="/shop" class="arrow-icon"><span class="ti-shopping-cart"></span></a>
+										<a href="/account" class="arrow-icon"><span class="ti-heart"></span></a>
+									</div>
+								</div>
+								<!-- product content -->
+								<div class="product-content">
+									<!-- product tile -->
+									<h3 class="product-title">
+										<a href="javascript:;">Casual cotton t-shirt</a>
+									</h3>
+									<!-- product price -->
+									<span class="price"><ins>{{ 199.00 | clare_money }}</ins></span>
+								</div>
+							</div>
+						</div>
+						<!-- column -->
+						<div class="col-12 col-sm-6 col-md-3">
+							<!-- Product -->
+							<div class="product product-style-3">
+								<!-- product thumbnail -->
+								<div class="product-thumbnail">
+									<a href="javascript:;" class="thumbnail"><img src="/assets/images/best-sellers-img3.jpg" alt="best sellers products img"></a>
+
+
+									<!-- product hover button -->
+									<div class="product-hover-button">
+										<a href="javascript:;" class="select-option-btn">Select option</a>
+									</div>
+
+									<!-- product buttons icon-->
+									<div class="product-buttons-icon">
+										<a href="#product-quick-popup" class="arrow-icon quick-view-link"><span class="ti-eye"></span></a>
+										<a href="/shop" class="arrow-icon"><span class="ti-shopping-cart"></span></a>
+										<a href="/account" class="arrow-icon"><span class="ti-heart"></span></a>
+									</div>
+								</div>
+								<!-- product content -->
+								<div class="product-content">
+									<!-- product tile -->
+									<h3 class="product-title">
+										<a href="javascript:;">Floral designed dress</a>
+									</h3>
+									<!-- product price -->
+									<span class="price"><ins>{{ 99.00 | clare_money }}</ins></span>
+								</div>
+							</div>
+						</div>
+						<!-- column -->
+						<div class="col-12 col-sm-6 col-md-3">
+							<!-- Product -->
+							<div class="product product-style-3">
+								<!-- product thumbnail -->
+								<div class="product-thumbnail">
+									<a href="javascript:;" class="thumbnail"><img src="/assets/images/best-sellers-img4.jpg" alt="best sellers products img"></a>
+
+									<!-- -->
+									<div class="product-badges">
+										<span class="badge  onsale">-11%</span>
+									</div>
+
+									<!-- product hover button -->
+									<div class="product-hover-button">
+										<a href="javascript:;" class="select-option-btn">Select option</a>
+									</div>
+
+									<!-- product buttons icon-->
+									<div class="product-buttons-icon">
+										<a href="#product-quick-popup" class="arrow-icon quick-view-link"><span class="ti-eye"></span></a>
+										<a href="/shop" class="arrow-icon"><span class="ti-shopping-cart"></span></a>
+										<a href="/account" class="arrow-icon"><span class="ti-heart"></span></a>
+									</div>
+								</div>
+								<!-- product content -->
+								<div class="product-content">
+									<!-- product tile -->
+									<h3 class="product-title">
+										<a href="javascript:;">Crop tops for daily wear</a>
+									</h3>
+									<!-- product price -->
+									<span class="price"><ins>{{ 45.00 | clare_money }}</ins></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Product Quick view Popup -->
+			<div id="product-quick-popup" class="mfp-hide product-quick-popup">
+				<div class="product-quick-body">
+					<!-- Product Quick view img -->
+					<div class="quick-view-left">
+						<img src="/assets/images/quick-view-left-img.jpg" alt="Product Quick view img">
+					</div>
+					<!-- Product Quick view content -->
+					<div class="quick-view-content">
+						<div class="product-buttons-icon">
+							<a href="/account" class="icon"><span class="ti-heart"></span></a>
+						</div>
+						<!-- product info -->
+						<div class="product-info product-info-style-2">
+							<h2 class="product_title">{{ title }}</h2>
+							<div class="price">{{ price | clare_money }}</div>
+
+							<div class="short-des">
+								<p>A Clare catalog piece with a clean cut and fabric chosen for daily wear. Ask us about size, colour, and similar styles through the inquiry form.</p>
+							</div>
+							<p class="people-viewing"><i class="fa-solid fa-eye"></i> <strong>25</strong> people are viewing this right now</p>
+
+							{{ partial:product-add-to-cart }}
+
+								<!-- product extra buttons-->
+								<div class="product-extra-buttons">
+									<a href="#"><img src="/assets/images/compare-icon.svg"  alt="compare-icon"> Compare</a>
+									<a href="#"><img src="/assets/images/question-icon.svg"  alt="question-icon"> Ask a question</a>
+									<a href="#"><img src="/assets/images/share-outline-icon.svg"  alt="share-outline-icon"> Share</a>
+								</div>
+
+								<!-- product meta -->
+								<div class="product-meta">
+									<div class="product-meta-list">
+										<span>SKU: </span>
+										<span class="meta">039</span>
+									</div>
+									<div class="product-meta-list">
+										<span>Category:</span>
+										<span class="meta">Demo Products</span>
+									</div>
+									<div class="product-meta-list">
+										<span>Tags:</span>
+										<span class="meta">Innovation, Virtual</span>
+									</div>
+								</div>
+							</form>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Product Quick view Popup -->
+
+
+		</main>
+		<!--/ End site-primary -->

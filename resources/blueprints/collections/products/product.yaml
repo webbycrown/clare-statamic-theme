@@ -1,0 +1,41 @@
+title: Product
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          - { handle: title, field: { type: text, required: true } }
+          - { handle: image, field: { type: assets, container: assets, max_files: 1, display: Image } }
+          - { handle: gallery, field: { type: assets, container: assets, display: Gallery } }
+          - { handle: price, field: { type: text, display: Price } }
+          - { handle: compare_price, field: { type: text, display: 'Compare price' } }
+          - { handle: badge, field: { type: text, display: Badge } }
+          - { handle: label, field: { type: text, display: Label } }
+          - { handle: excerpt, field: { type: textarea, display: Excerpt } }
+          - { handle: overview, field: { type: bard, display: Overview } }
+          - { handle: product_category, field: { type: terms, taxonomies: [product_category], display: Category } }
+          - { handle: colors, field: { type: list, display: Colors, instructions: 'Used by the shop colour filter. Keep in step with the Color option group.' } }
+          - { handle: sizes, field: { type: list, display: Sizes, instructions: 'Used by the shop size filter. Keep in step with the Size option group.' } }
+          -
+            handle: product_options
+            field:
+              type: replicator
+              display: Product options
+              instructions: 'Add Color, Size, Material, Length, Metal, Engraving, or a custom group. Only groups with values show on the product page.'
+              collapse: true
+              sets:
+                option:
+                  display: Option group
+                  fields:
+                    - { handle: handle, field: { type: select, display: Option, options: { color: Color, size: Size, material: Material, length: Length, metal: Metal, engraving: Engraving, custom: Custom }, default: custom } }
+                    - { handle: label, field: { type: text, display: Label, instructions: 'Leave blank to use the option name.' } }
+                    - { handle: style, field: { type: select, display: Style, options: { swatch: 'Color swatch', box: Box }, default: box } }
+                    - { handle: values, field: { type: list, display: Values } }
+          - { handle: template, field: { type: template, display: Template } }
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          - { handle: slug, field: { type: slug } }

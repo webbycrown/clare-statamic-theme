@@ -1,0 +1,24 @@
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/imagesloaded.pkgd.min.js"></script>
+<script src="/assets/js/swiper-bundle.min.js"></script>
+<script src="/assets/js/magnific-popup.js"></script>
+<script src="/assets/js/isotope.pkgd.min.js"></script>
+<script src="/assets/js/custom.js?v={{ now format='YmdHis' }}"></script>
+<script>
+(function () {
+  function themeReveal() {
+    if (!document.body || document.body.classList.contains('is-ready')) return;
+    document.body.classList.add('is-ready');
+    document.body.classList.remove('no-scroll');
+    var pre = document.querySelector('.preloader');
+    if (pre) {
+      pre.style.opacity = '0';
+      pre.style.pointerEvents = 'none';
+      setTimeout(function () { pre.style.display = 'none'; }, 250);
+    }
+  }
+  if (document.readyState === 'complete') themeReveal();
+  else window.addEventListener('load', themeReveal);
+  setTimeout(themeReveal, 2000);
+})();
+</script>

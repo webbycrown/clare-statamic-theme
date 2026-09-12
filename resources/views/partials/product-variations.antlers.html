@@ -1,0 +1,17 @@
+{{ clare_options }}
+<div class="product-option product-option-{{ style }}">
+  <span class="label-title">{{ label }}</span>
+  <div class="product-option-list">
+    {{ values }}
+    <label class="product-option-choice" title="{{ value }}">
+      <input type="radio" name="options[{{ handle }}]" value="{{ value }}" {{ if first }}checked{{ /if }}>
+      {{ if style == "swatch" }}
+      <span class="color-option-swatch" style="background-color: {{ value | clare_color }};"></span>
+      {{ else }}
+      <span class="size-option-box">{{ value }}</span>
+      {{ /if }}
+    </label>
+    {{ /values }}
+  </div>
+</div>
+{{ /clare_options }}

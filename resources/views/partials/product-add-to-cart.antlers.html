@@ -1,0 +1,18 @@
+<form action="/cart/add" method="post" class="variations_form">
+  {{ csrf_field }}
+  <input type="hidden" name="id" value="{{ id }}">
+  {{ partial:product-variations }}
+  <div class="variation-add-to-cart">
+    <div class="variation-quantity">
+      <label class="label-title">Quantity:</label>
+      <div class="quantity">
+        <div class="quantity-button minus">-</div>
+        <input type="text" class="input-text input-qty text" name="qty" value="1" title="Qty" size="4" autocomplete="off">
+        <div class="quantity-button plus">+</div>
+      </div>
+    </div>
+    <div class="single-add-to-cart">
+      <button type="submit" class="single_add_to_cart_button btn btn-dark btn-style-2">{{ trans:clare.add_to_cart }}</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,8 @@
+<div class="clare-subscribe">
+  <div class="clare-subscribe-msg" role="status" aria-live="polite"></div>
+  {{ form:subscription class="newsletter-form js-clare-subscribe" }}
+    <input type="text" name="fax" class="d-none" tabindex="-1" autocomplete="off">
+    <input type="email" name="email" value="{{ old:email }}" placeholder="Email address" class="form-control" required>
+    <button type="submit" class="{{ button_class or 'btn btn-primary' }}">{{ button_label or 'Subscribe' }}</button>
+  {{ /form:subscription }}
+</div>

@@ -1,0 +1,54 @@
+tree:
+  -
+    entry: home
+  -
+    entry: home-v2
+  -
+    entry: home-v3
+  -
+    entry: shop
+    children:
+      -
+        entry: shop-list
+      -
+        entry: shop-right
+      -
+        entry: shop-three
+  -
+    entry: categories
+  -
+    entry: about
+  -
+    entry: blog
+    children:
+      -
+        entry: blog-grid-2
+      -
+        entry: blog-classic
+  -
+    entry: contact
+  -
+    entry: faqs
+  -
+    entry: privacy
+  -
+    entry: terms
+  -
+    entry: sitemap
+  -
+    entry: login
+  -
+    entry: register
+  -
+    entry: forgot-password
+  -
+    entry: reset-password
+  -
+    entry: account
+    children:
+      -
+        entry: account-profile
+      -
+        entry: account-addresses
+      -
+        entry: account-addresses-edit

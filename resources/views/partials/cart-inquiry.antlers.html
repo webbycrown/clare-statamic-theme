@@ -1,0 +1,20 @@
+{{ form:cart_inquiry class="cart-inquiry-form js-clare-cart-inquiry" }}
+  <input type="text" name="fax" class="d-none" tabindex="-1" autocomplete="off">
+  <textarea name="cart_items" class="d-none" hidden>{{ clare_cart }}{{ title }} × {{ qty }} — {{ total_label }}{{ if options_label }} ({{ options_label }}){{ /if }}
+{{ /clare_cart }}</textarea>
+  <input type="hidden" name="cart_total" value="{{ clare_cart_subtotal }}">
+  <p class="clare-subscribe-msg cart-inquiry-msg" role="status"></p>
+  <div class="form-group">
+    <label for="cart-inquiry-name">Name*</label>
+    <input type="text" id="cart-inquiry-name" name="name" class="form-control" value="{{ user:name }}" required>
+  </div>
+  <div class="form-group">
+    <label for="cart-inquiry-email">Email*</label>
+    <input type="email" id="cart-inquiry-email" name="email" class="form-control" value="{{ user:email }}" required>
+  </div>
+  <div class="form-group">
+    <label for="cart-inquiry-message">Message*</label>
+    <textarea id="cart-inquiry-message" name="message" class="form-control" rows="4" required>{{ old:message }}</textarea>
+  </div>
+  <button type="submit" class="btn btn-dark w-100">{{ trans:clare.send_inquiry }}</button>
+{{ /form:cart_inquiry }}

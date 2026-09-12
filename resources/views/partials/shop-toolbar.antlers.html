@@ -1,0 +1,27 @@
+<div class="filter-shop-loop">
+  <div class="d-flex w-100 mb-3 mb-md-0 justify-content-between align-items-center">
+    <p class="shop-result-count">
+      {{ clare_products:paginate paginate="12" }}
+      Showing {{ shown_from }}–{{ shown_to }} of {{ total_items }}{{ if get:q }} for “{{ get:q }}”{{ /if }}
+      {{ /clare_products:paginate }}
+    </p>
+    <a class="filter-mobile-btn text-dark fw-medium d-flex align-items-center d-md-none">
+      <span class="ti-filter me-1"></span> Filter
+    </a>
+  </div>
+  <div class="sorting-products">
+    <form class="shop-ordering" method="get" action="{{ current_url }}">
+      <select name="orderby" class="orderby" aria-label="Shop order">
+        <option value="date" {{ if !get:orderby || get:orderby == 'date' }}selected{{ /if }}>Default sorting</option>
+        <option value="title" {{ if get:orderby == 'title' }}selected{{ /if }}>Name</option>
+        <option value="price" {{ if get:orderby == 'price' }}selected{{ /if }}>Price: low to high</option>
+        <option value="price-desc" {{ if get:orderby == 'price-desc' }}selected{{ /if }}>Price: high to low</option>
+      </select>
+    </form>
+  </div>
+  <div class="product-views-buttons">
+    <a href="/shop/list" class="list-view{{ if segment_2 == 'list' }} active{{ /if }}"><span></span><span></span><span></span></a>
+    <a href="/shop/three-column" class="grid-three-view{{ if segment_2 == 'three-column' }} active{{ /if }}"><span></span><span></span><span></span></a>
+    <a href="/shop" class="grid-four-view{{ if !segment_2 }} active{{ /if }}"><span></span><span></span><span></span><span></span></a>
+  </div>
+</div>

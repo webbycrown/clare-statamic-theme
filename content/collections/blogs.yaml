@@ -1,0 +1,7 @@
+title: Blogs
+route: '/blog/{slug}'
+template: blogs/show
+date: true
+sort_dir: desc
+taxonomies:
+  - blog_category

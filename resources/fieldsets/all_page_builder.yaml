@@ -1,0 +1,12 @@
+title: 'Page builder'
+fields:
+  -
+    handle: page_builder
+    field:
+      type: replicator
+      display: 'Page builder'
+      sets:
+        text:
+          display: Text
+          fields:
+            - { handle: content, field: { type: markdown, display: Content } }

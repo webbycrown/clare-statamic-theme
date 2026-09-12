@@ -1,0 +1,170 @@
+<!-- site-primary -->
+		<main class="site-primary">
+
+			<!-- heading banner section -->
+			<section class="heading-banner-section">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<!-- column -->
+						<div class="col-12">
+							<!-- heading banner wrap-->
+							<div class="heading-banner-wrap">
+								<!-- breadcrumb -->
+								<nav aria-label="breadcrumb">
+									<ol class="breadcrumb">
+										<li class="breadcrumb-item"><a href="/">Home</a></li>
+										<li class="breadcrumb-item active" aria-current="page">Blog</li>
+									</ol>
+								</nav>
+								<!-- page title -->
+								<h1>Blog</h1>
+
+								<!-- heading banner img -->
+								<div class="heading-banner-img">
+									<img src="/assets/images/heading-banner-img.png" alt="heading banner img">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</section>
+			<!--/ End Hero slider section -->
+
+			<!-- shop Blog grid section -->
+			<section class="blog-page-grid section-two">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+
+						<!-- column -->
+						<div class="col-12 col-md-8">
+							<!-- row -->
+														<div class="row">
+								{{ if get:q }}
+								<div class="col-12 mb-3"><p class="shop-result-count">{{ clare_blogs:count }} posts for “{{ get:q }}”</p></div>
+								{{ /if }}
+								{{ clare_blogs paginate="6" }}
+								<div class="col-12 col-md-6">
+									<div class="blog-grid-style-3">
+										<div class="blog-grid-image">
+											<a href="{{ url }}">{{ if image }}<img src="{{ image:url }}" alt="{{ title }}">{{ else }}<img src="/assets/images/blog-img1.jpg" alt="{{ title }}">{{ /if }}</a>
+										</div>
+										<div class="blog-grid-content">
+											<h6>{{ blog_category }}{{ title }}{{ /blog_category }} <span>{{ date format="jS M Y" }}</span></h6>
+											<h5 class="entry-title"><a href="{{ url }}">{{ title }}</a></h5>
+											<p>{{ excerpt }}</p>
+											<a href="{{ url }}" class="btn link">Read more <span class="ti-arrow-right"></span></a>
+										</div>
+									</div>
+								</div>
+								{{ /clare_blogs }}
+								{{ if {clare_blogs:count} == 0 }}
+								<div class="col-12">{{ partial:blog-empty }}</div>
+								{{ /if }}
+								<div class="col-12">
+									{{ partial:blog-pagination }}
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-md-4">
+							<!-- Left sidebar -->
+							<div class="sidebar blog-sidebar">
+								<!-- sidebar inner -->
+								<div class="sidebar-inner">
+									<!-- widget -->
+									<div class="widget widget-search">
+										<!-- Widget Search  -->
+										<div class="widget-search-form">
+											{{ partial:blog-search-form }}
+										</div>
+									</div>
+									<!-- widget -->
+									<div class="widget widget-popular-posts">
+										<h4 class="widget-title">Popular Posts</h4>
+										{{ partial:popular-posts }}
+									</div>
+
+									<!-- widget -->
+									<div class="widget widget-categories">
+										<h4 class="widget-title">Categories</h4>
+										<!-- Categories list -->
+										{{ partial:blog-categories }}
+									</div>
+
+									<!-- widget -->
+									<div class="widget widget-popular-tags">
+										<h4 class="widget-title">Popular Tags</h4>
+										<!-- Popular Tags list -->
+										<div class="popular-tags-list">
+											<ul>
+												<li><a href="/blog">Coats</a> </li>
+												<li><a href="/blog">Knits</a> </li>
+												<li><a href="/blog">Wool</a> </li>
+												<li><a href="/blog">Care</a> </li>
+												<li><a href="/blog">Travel</a> </li>
+												<li><a href="/blog">Shoes</a> </li>
+												<li><a href="/blog">Bags</a> </li>
+												<li><a href="/blog">Winter</a> </li>
+												<li><a href="/blog">Layering</a> </li>
+												<li><a href="/blog">Style</a> </li>
+											</ul>
+										</div>
+									</div>
+
+									<!-- widget -->
+									<div class="widget widget-instagram">
+										<h4 class="widget-title">Instagram</h4>
+										<!-- Instagram list -->
+										<div class="instagram-list">
+											<!-- instagram box -->
+											<div class="instagram-box">
+												<img src="/assets/images/instagram-img1.jpg" alt="instagram img 1">
+												<div class="instagram-overlay"><a href="#"><span class="ti-instagram"></span></a></div>
+											</div>
+											<!-- instagram box -->
+											<div class="instagram-box">
+												<img src="/assets/images/instagram-img2.jpg" alt="instagram img 2">
+												<div class="instagram-overlay"><a href="#"><span class="ti-instagram"></span></a></div>
+											</div>
+											<!-- instagram box -->
+											<div class="instagram-box">
+												<img src="/assets/images/instagram-img3.jpg" alt="instagram img 3">
+												<div class="instagram-overlay"><a href="#"><span class="ti-instagram"></span></a></div>
+											</div>
+											<!-- instagram box -->
+											<div class="instagram-box">
+												<img src="/assets/images/instagram-img4.jpg" alt="instagram img 4">
+												<div class="instagram-overlay"><a href="#"><span class="ti-instagram"></span></a></div>
+											</div>
+											<!-- instagram box -->
+											<div class="instagram-box">
+												<img src="/assets/images/instagram-img5.jpg" alt="instagram img 5">
+												<div class="instagram-overlay"><a href="#"><span class="ti-instagram"></span></a></div>
+											</div>
+											<!-- instagram box -->
+											<div class="instagram-box">
+												<img src="/assets/images/instagram-img6.jpg" alt="instagram img 6">
+												<div class="instagram-overlay"><a href="#"><span class="ti-instagram"></span></a></div>
+											</div>
+											<!-- instagram box -->
+											<div class="instagram-box">
+												<img src="/assets/images/instagram-img6.jpg" alt="instagram img 6">
+												<div class="instagram-overlay"><a href="#"><span class="ti-instagram"></span></a></div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--/ shop page grid section -->
+
+		</main>
+		<!--/ End site-primary -->

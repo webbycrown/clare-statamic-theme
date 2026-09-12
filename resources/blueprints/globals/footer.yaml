@@ -1,0 +1,4 @@
+title: Footer
+fields:
+  - { handle: about_text, field: { type: textarea } }
+  - { handle: copyright, field: { type: text } }

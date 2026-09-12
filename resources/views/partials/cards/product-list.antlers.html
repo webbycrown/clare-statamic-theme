@@ -1,0 +1,20 @@
+<div class="product product-list-grid">
+  <div class="product-thumbnail">
+    <a href="{{ url }}" class="thumbnail">
+      {{ if image }}<img src="{{ image:url }}" alt="{{ title }}">{{ /if }}
+    </a>
+    {{ if badge }}<div class="product-badges"><span class="badge onsale">{{ badge }}</span></div>{{ /if }}
+  </div>
+  <div class="product-content">
+    <h3 class="product-title"><a href="{{ url }}">{{ title }}</a></h3>
+    {{ if price }}<span class="price"><ins>{{ price | clare_money }}</ins>{{ if compare_price }} <del>{{ compare_price | clare_money }}</del>{{ /if }}</span>{{ /if }}
+    <div class="entry-description">
+      <p>{{ excerpt }}</p>
+    </div>
+    <div class="product-list-buttons">
+      <div class="add_to_cart_button">
+        {{ partial:add-to-cart :id="id" class="btn btn-dark" }}
+      </div>
+    </div>
+  </div>
+</div>

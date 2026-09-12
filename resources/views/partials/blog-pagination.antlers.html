@@ -1,0 +1,25 @@
+{{ clare_blogs:paginate paginate="6" }}
+{{ if total_pages > 1 }}
+<div class="pagination-part">
+  <nav aria-label="Blog pages">
+    <ul class="pagination">
+      {{ if prev_page }}
+      <li class="page-item previous-link"><a class="page-link" href="{{ prev_page }}">Prev</a></li>
+      {{ /if }}
+      {{ pages }}
+      <li class="page-item{{ if current }} active{{ /if }}"{{ if current }} aria-current="page"{{ /if }}>
+        {{ if current }}
+        <span class="page-link">{{ page }}</span>
+        {{ else }}
+        <a class="page-link" href="{{ url }}">{{ page }}</a>
+        {{ /if }}
+      </li>
+      {{ /pages }}
+      {{ if next_page }}
+      <li class="page-item next-link"><a class="page-link" href="{{ next_page }}">Next</a></li>
+      {{ /if }}
+    </ul>
+  </nav>
+</div>
+{{ /if }}
+{{ /clare_blogs:paginate }}

@@ -1,0 +1,21 @@
+<div class="popular-posts">
+  {{ collection:blogs limit="6" sort="date:desc" as="posts" }}
+    {{ posts }}
+    <div class="popular-posts-list">
+      <div class="thumbnail">
+        <a href="{{ url }}">
+          {{ if image }}
+          <img src="{{ image:url }}" alt="{{ title }}">
+          {{ else }}
+          <img src="/assets/images/blog-img1.jpg" alt="{{ title }}">
+          {{ /if }}
+        </a>
+      </div>
+      <div class="popular-posts-info">
+        <span>{{ date format="jS M Y" }}</span>
+        <h6><a href="{{ url }}">{{ title }}</a></h6>
+      </div>
+    </div>
+    {{ /posts }}
+  {{ /collection:blogs }}
+</div>

@@ -1,0 +1,7 @@
+title: 'Cart inquiry'
+honeypot: fax
+email:
+  -
+    to: clare@gmail.com
+    reply_to: '{{ email }}'
+    subject: 'Cart inquiry from {{ name }}'

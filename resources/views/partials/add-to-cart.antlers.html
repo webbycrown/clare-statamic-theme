@@ -1,0 +1,8 @@
+<form action="/cart/add" method="post" class="clare-add-to-cart">
+  {{ csrf_field }}
+  <input type="hidden" name="id" value="{{ id }}">
+  {{ if show_qty }}
+  <input type="number" name="qty" value="1" min="1" max="20" class="form-control mb-2" style="max-width:90px">
+  {{ /if }}
+  <button type="submit" class="{{ class or 'btn btn-dark' }}">{{ trans:clare.add_to_cart }}</button>
+</form>

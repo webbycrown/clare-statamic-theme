@@ -1,0 +1,5 @@
+title: Products
+route: '/products/{slug}'
+template: products/show
+taxonomies:
+  - product_category

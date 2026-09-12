@@ -1,0 +1,43 @@
+<div class="mini-cart-dropdown">
+  <div class="mini-cart-close">
+    <a href="javascript:;"><i class="fa-regular fa-xmark"></i></a>
+  </div>
+  <div class="cart-dropdown-wrapper">
+    <div class="order-summary">
+      <h3 class="account-title">{{ trans:clare.cart }}</h3>
+      <div class="summary-product-list">
+        {{ if clare_cart_count }}
+          {{ clare_cart }}
+          <div class="cart-product cart-summary-product">
+            <div class="cart-thumb">
+              <a href="{{ url }}"><img src="{{ image }}" alt="{{ title }}"></a>
+            </div>
+            <div class="cart-product-title">
+              <div class="remove">
+                <form action="/cart/remove" method="post">
+                  {{ csrf_field }}
+                  <input type="hidden" name="id" value="{{ line_id or id }}">
+                  <button type="submit" aria-label="Remove"><i class="fa-regular fa-xmark"></i></button>
+                </form>
+              </div>
+              <h6><a href="{{ url }}">{{ title }}</a></h6>
+              {{ if options_label }}
+              <p class="cart-variant">{{ options_label }}</p>
+              {{ /if }}
+              <div class="product-qty variation-quantity">
+                <div class="price">{{ qty }} × {{ price_label }}</div>
+              </div>
+            </div>
+          </div>
+          {{ /clare_cart }}
+        {{ else }}
+          <p>{{ trans:clare.empty_cart }}</p>
+        {{ /if }}
+      </div>
+      <div class="mini-cart-buttons">
+        <a href="/cart" class="btn btn-outline-dark">{{ trans:clare.view_cart }}</a>
+        <a href="/shop" class="btn btn-dark">{{ trans:clare.continue_shopping }}</a>
+      </div>
+    </div>
+  </div>
+</div>

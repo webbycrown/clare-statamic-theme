@@ -1,0 +1,10 @@
+<script>
+window.clareSearchIndex = [
+{{ collection:products }}
+  { "title": "{{ title }}", "url": "{{ url }}", "meta": "{{ price | clare_money }}", "type": "product" }{{ unless last }},{{ /unless }}
+{{ /collection:products }}
+{{ collection:blogs }}
+  ,{ "title": "{{ title }}", "url": "{{ url }}", "meta": "Blog", "type": "blog", "excerpt": "{{ excerpt }}" }
+{{ /collection:blogs }}
+];
+</script>

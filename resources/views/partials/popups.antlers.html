@@ -1,0 +1,47 @@
+<a class="newsletter-popup-link d-none" href="#newsletter-popup">Newsletter Popup</a>
+<div id="newsletter-popup" class="mfp-hide newsletter-popup-block">
+  <div class="newsletter-body" style="background-image:url('/assets/images/newsletter-bg-img.png');">
+    <div class="newsletter-popup-content">
+      <div class="site-brand">
+        <a href="/"><img src="/assets/images/logo-dark.svg" alt="logo"></a>
+      </div>
+      <div class="clare-popup-copy">
+        <h6>Subscribe to our newsletter</h6>
+        <h3>Get 20% Off Discount Coupon</h3>
+        <p>Join the Clare list for seasonal notes, fabric care, and catalog drops. No checkout and no payment on this site.</p>
+        {{ partial:newsletter-form }}
+      </div>
+      <div class="clare-subscribe-success" hidden>
+        <span class="clare-subscribe-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <h3>You’re on the list</h3>
+        <p>Thanks for subscribing. We’ll send catalog notes to your inbox. You can close this window — it won’t pop up again in this browser.</p>
+        <button type="button" class="btn btn-dark clare-popup-close">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cookie-popup" id="clare-cookie-popup">
+  <button type="button" class="clare-cookie-close" aria-label="Close">&times;</button>
+  <h4>Can we store cookies?</h4>
+  <p>We use a small cookie so the catalog, forms, and login screens work. Close this notice once and it will not return in this browser.</p>
+  <p>You can read our <a href="/privacy">Privacy policy</a>.</p>
+  <div class="cookie-button">
+    <a href="javascript:;" class="btn btn-dark accept-all-btn" data-clare-cookie="accept">Accept all</a>
+    <a href="javascript:;" class="btn btn-secondary accept-all-btn" data-clare-cookie="decline">Decline all</a>
+  </div>
+</div>
+<script>
+(function () {
+  try {
+    if (window.localStorage && localStorage.getItem("clare_cookie")) {
+      document.documentElement.classList.add("clare-hide-cookie");
+    }
+    if (window.localStorage && localStorage.getItem("clare_newsletter")) {
+      document.documentElement.classList.add("clare-hide-newsletter");
+    }
+  } catch (e) {}
+})();
+</script>

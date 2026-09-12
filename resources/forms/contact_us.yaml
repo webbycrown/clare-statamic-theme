@@ -1,0 +1,4 @@
+title: 'Contact us'
+honeypot: fax
+email:
+  - { to: clare@gmail.com, subject: 'New contact message' }

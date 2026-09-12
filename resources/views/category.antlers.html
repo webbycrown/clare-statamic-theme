@@ -1,0 +1,58 @@
+<main class="site-primary">
+  <section class="heading-banner-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="heading-banner-wrap">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/categories">Categories</a></li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  {{ taxonomy:product_category }}{{ if slug == category_slug }}{{ title }}{{ /if }}{{ /taxonomy:product_category }}
+                </li>
+              </ol>
+            </nav>
+            <h1>{{ taxonomy:product_category }}{{ if slug == category_slug }}{{ title }}{{ /if }}{{ /taxonomy:product_category }}</h1>
+            <div class="heading-banner-img">
+              <img src="/assets/images/heading-banner-img.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="shop-page-grid-section style-3 section-two">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-3">
+          <div class="sidebar">
+            <div class="sidebar-inner">
+              <h3 class="sidebar-title">Categories</h3>
+              {{ partial:shop-categories }}
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-9">
+          <div class="filter-shop-loop">
+            <p class="shop-result-count">{{ taxonomy:product_category }}{{ if slug == category_slug }}{{ title }}{{ /if }}{{ /taxonomy:product_category }}</p>
+          </div>
+          <div class="row">
+            {{ collection:products taxonomy:product_category="{category_slug}" paginate="12" as="products" }}
+              {{ products }}
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                {{ partial:cards/product }}
+              </div>
+              {{ /products }}
+              <div class="col-12">
+                {{ if no_results }}<p>No products in this category yet. <a href="/shop">Browse the shop</a></p>{{ /if }}
+                {{ paginate }}{{ if links }}<div class="section-full-btn">{{ links }}</div>{{ /if }}{{ /paginate }}
+              </div>
+            {{ /collection:products }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

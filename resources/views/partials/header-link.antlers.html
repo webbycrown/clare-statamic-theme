@@ -1,0 +1,75 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>{{ title ?? site:name }}</title>
+  {{ setting }}
+    {{ if favicon }}{{ favicon }}<link rel="icon" href="{{ url }}" type="image/png">{{ /favicon }}{{ /if }}
+  {{ /setting }}
+  <style id="theme-fouc">
+    html { background: #fff; }
+    body { margin: 0; }
+    body:not(.is-ready) { overflow: hidden; }
+    body:not(.is-ready) .wrapper > *:not(.preloader) { visibility: hidden !important; }
+    .preloader { position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; background: #fff; }
+    .preloader img { width: 120px; max-width: 50%; }
+    body.is-ready { overflow: visible !important; }
+    body.is-ready .preloader { opacity: 0; pointer-events: none; }
+  </style>
+  <noscript><style>body .wrapper > * { visibility: visible !important; } .preloader { display: none !important; }</style></noscript>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/magnific-popup.css">
+  <link rel="stylesheet" href="/assets/css/all-fontawesome.min.css">
+  <link rel="stylesheet" href="/assets/css/themify-icons.css">
+  <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link id="clare-main-css" rel="stylesheet" href="/assets/css/responsive.css?v={{ now format='YmdHis' }}">
+  <link rel="stylesheet" href="/assets/css/clare.css?v={{ now format='YmdHis' }}">
+  <script>
+    (function () {
+      var link = document.getElementById('clare-main-css');
+      function show() {
+        function apply() {
+          if (document.body) document.body.classList.add('is-ready');
+          else document.addEventListener('DOMContentLoaded', apply);
+        }
+        apply();
+      }
+      if (link) {
+        if (link.sheet) show();
+        else link.addEventListener('load', show);
+      }
+      setTimeout(show, 2000);
+    })();
+  </script>
+  {{ if get:clare_preview }}
+  <style id="clare-preview">
+    @font-face {
+      font-family: ClarePreview;
+      src: url("/assets/fonts/NotoSans.ttf") format("truetype");
+    }
+    body, h1, h2, h3, h4, h5, h6, p, a, span, li, label, button, input, textarea, select {
+      font-family: ClarePreview, sans-serif !important;
+    }
+    body { overflow: visible !important; }
+    body .wrapper > * { visibility: visible !important; }
+    .preloader,
+    .cookie-popup,
+    .newsletter-popup-block,
+    .mfp-bg,
+    .mfp-wrap,
+    .heading-banner-section { display: none !important; }
+    .site-header { position: relative !important; top: 0 !important; }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.body.classList.add('is-ready');
+      document.body.classList.remove('no-scroll');
+    });
+  </script>
+  {{ /if }}
+</head>

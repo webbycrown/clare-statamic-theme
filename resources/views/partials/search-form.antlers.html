@@ -1,0 +1,17 @@
+<form action="/shop" class="search-form search-item klb-ajax-search clare-search-wrap" role="search" method="get">
+  <input type="search" name="q" value="{{ get:q }}" class="form-control line clare-search-input" autocomplete="off" placeholder="{{ trans:clare.search }}" data-clare-search>
+  <div class="drop-down">
+    <div class="selected">
+      <span>{{ if get:category }}{{ taxonomy:product_category }}{{ if slug == get:category }}{{ title }}{{ /if }}{{ /taxonomy:product_category }}{{ else }}Select Category{{ /if }}</span>
+    </div>
+    <ul class="search-categories dropdown-menu" id="filters">
+      <li class="nav-item dropdown-item" data-slug="">All categories</li>
+      {{ taxonomy:product_category }}
+      <li class="nav-item dropdown-item" data-slug="{{ slug }}">{{ title }}</li>
+      {{ /taxonomy:product_category }}
+    </ul>
+  </div>
+  <input type="hidden" name="category" value="{{ get:category }}" class="clare-search-category">
+  <button type="submit" class="btn"><span class="ti-search"></span></button>
+  <ul class="clare-search-suggest" data-clare-suggest></ul>
+</form>

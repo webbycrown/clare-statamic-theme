@@ -1,0 +1,12 @@
+{{ partial:heading-banner }}
+<main class="site-primary">
+  <section class="section-two">
+    <div class="container">
+      {{ if page_builder }}
+        {{ page_builder }}{{ partial src="page_builder/{type}" }}{{ /page_builder }}
+      {{ else }}
+        {{ content }}
+      {{ /if }}
+    </div>
+  </section>
+</main>

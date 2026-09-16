@@ -6,6 +6,7 @@ export_paths:
   - content
   - app/Http
   - app/Services
+  - app/Support
   - app/Modifiers
   - app/Providers
   - app/Tags

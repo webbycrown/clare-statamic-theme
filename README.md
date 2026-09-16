@@ -86,8 +86,6 @@ Add any of these to any page via the Control Panel → Theme sections tab.
 
 ## Forms (Core kit)
 
-The Core kit ships one form active by default. Additional forms are included but treated as Pro features when sold commercially.
-
 | Form | Handle | Notes |
 |---|---|---|
 | Contact us | `contact_us` | AJAX; honeypot included |
@@ -95,6 +93,9 @@ The Core kit ships one form active by default. Additional forms are included but
 | Cart inquiry | `cart_inquiry` | AJAX |
 | Product inquiry | `product_inquiry` | AJAX |
 
+Statamic Core includes one form. Use **Statamic Pro** if you keep all four.
+
+Set each form’s email recipient in **CP → Forms** after install.
 ---
 
 ## Installation

@@ -58,86 +58,13 @@
 						<div class="column left">
 							<!-- site-brand -->
 							<div class="site-brand">
-								<a href="/home-v3"><img src="/assets/images/logo-dark.svg" alt="logo"></a>
+								<a href="/home-v3">{{ setting }}<img src="{{ partial:partials/media-url :file='logo' fallback='images/logo-dark.svg' }}" alt="{{ site_name ?? 'Clare' }}">{{ /setting }}</a>
 							</div>
 						</div>
 						<!-- column -->
 						<div class="column center">
 							<!-- site-nav -->
-							<nav class="site-nav horizontal primary-nav">
-								<ul class="menu ">
-									<li class="menu-item menu-item-has-children active">
-										<a href="/home-v3">Home</a>
-										<ul class="sub-menu">
-											<li><a href="/">Home V1</a></li>
-											<li><a href="/home-v2">Home V2</a></li>
-											<li class="active"><a href="/home-v3">Home V3</a></li>
-										</ul>
-									</li>
-									<li class="menu-item"><a href="/shop">Shop</a></li>
-									<li class="menu-item mega-menu menu-item-has-children">
-										<a href="javascript:;">Pages</a>
-
-										<!-- Sub mega menu -->
-										<ul class="sub-mega-menu">
-											<li>
-												<ul class="sub-menu">
-													<li>
-														<a href="/shop">Shop Pages</a>
-														<ul>
-															<li><a href="/shop/list">Shop List</a></li>
-															<li><a href="/shop/right-sidebar">Shop Right Sidebar</a></li>
-															<li><a href="/shop/three-column">Shop Three Column</a></li>
-															<li><a href="/categories">Category</a></li>
-															<li><a href="/cart">{{ trans:clare.cart }}</a></li>
-														</ul>
-														<a href="/products/leather-winter-coat">Product Detail Pages</a>
-														<ul>
-															<li><a href="/products/leather-winter-coat">Product Detail 1</a></li>
-															<li><a href="/products/renew-merino-liner">Product Detail 2</a></li>
-															<li><a href="/products/felted-half-zip">Product Detail 3</a></li>
-														</ul>
-													</li>
-													<li>
-														<a href="/account">Account Pages</a>
-														<ul>
-															<li><a href="/account">My Account</a></li>
-															<li><a href="/account/profile">Account Details</a></li>
-															<li><a href="/account/addresses">Addresses</a></li>
-															<li><a href="/login">Login</a></li>
-															<li><a href="/register">Register</a></li>
-															<li><a href="/faqs">Faq</a></li>
-														</ul>
-													</li>
-													<li>
-
-														<a href="/blog">Blog Pages</a>
-														<ul>
-															<li><a href="/blog/grid-2">Blog Grid 2</a></li>
-															<li><a href="/blog/classic">Blog Classic</a></li>
-															<li><a href="/blog/quiet-coats-for-city-walks">Blog Detail</a></li>
-															<li><a href="/blog/season-edit-notes">Blog Detail Full</a></li>
-															<li><a href="/blog/how-to-layer-wool">Blog Detail Left Sidebar</a></li>
-														</ul>
-													</li>
-												</ul>
-											</li>
-											<li class="image-sub-menu">
-												<a href="/shop">Featured</a>
-												<ul class="featured-gallery">
-													<li><img src="/assets/images/featured-gallery-img1.jpg" alt="featured gallery img"></li>
-													<li><img src="/assets/images/featured-gallery-img2.jpg" alt="featured gallery img"></li>
-													<li><img src="/assets/images/featured-gallery-img3.jpg" alt="featured gallery img"></li>
-													<li><img src="/assets/images/featured-gallery-img4.jpg" alt="featured gallery img"></li>
-												</ul>
-											</li>
-										</ul>
-									</li>
-									<li class="menu-item"><a href="/about">About</a></li>
-									<li class="menu-item"><a href="/blog">Blog</a></li>
-									<li class="menu-item"><a href="/contact">Contact</a></li>
-								</ul>
-							</nav>
+							{{ partial:nav-primary }}
 						</div>
 						<!-- column -->
 						<div class="column right">
@@ -167,75 +94,7 @@
 			<!-- mobile menu -->
 			<div class="mobile-menu">
 				<div class="mobile-menu-close"><a href="javascript:;"><i class="fa-regular fa-xmark"></i></a></div>
-				<!-- site-nav -->
-				<nav class="site-nav horizontal primary-nav">
-					<ul class="menu ">
-						<li class="menu-item menu-item-has-children">
-							<a href="/">Home</a>
-							<ul class="sub-menu">
-								<li><a href="/">Home V1</a></li>
-								<li><a href="/home-v2">Home V2</a></li>
-								<li><a href="/home-v3">Home V3</a></li>
-							</ul>
-						</li>
-						<li class="menu-item"><a href="/shop">Shop</a></li>
-						<li class="menu-item mega-menu menu-item-has-children">
-							<a href="javascript:;">Pages</a>
-
-							<!-- Sub mega menu -->
-							<ul class="sub-mega-menu">
-								<li>
-									<ul class="sub-menu">
-										<li>
-											<a href="/categories/men">Man</a>
-											<ul>
-												<li><a href="/categories/tops">T-shirt</a></li>
-												<li><a href="/categories/tops">Shirt</a></li>
-												<li><a href="/categories/shoes">Shoes</a></li>
-											</ul>
-											<a href="/categories/shoes">Shoe</a>
-											<ul>
-												<li><a href="/categories/shoes">Casual</a></li>
-												<li><a href="/categories/shoes">Lofer</a></li>
-											</ul>
-										</li>
-										<li>
-											<a href="/categories/women">Woman</a>
-											<ul>
-												<li><a href="/categories/denims">Jeans</a></li>
-												<li><a href="/categories/tops">T-shirts</a></li>
-												<li><a href="/categories/tops">Shirts</a></li>
-												<li><a href="/categories/tops">Tops</a></li>
-												<li><a href="/categories/coats">Coats</a></li>
-												<li><a href="/categories/sweaters">Sweater</a></li>
-											</ul>
-										</li>
-										<li>
-											<a href="/categories/accessories">Accesories</a>
-											<ul>
-												<li><a href="/categories/bags">Handbag</a></li>
-												<li><a href="/categories/shoes">Shoes</a></li>
-												<li><a href="/categories/accessories">Wallets</a></li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-								<li class="image-sub-menu">
-									<a href="/shop">Featured</a>
-									<ul class="featured-gallery">
-										<li><img src="/assets/images/featured-gallery-img1.jpg" alt="featured gallery img"></li>
-										<li><img src="/assets/images/featured-gallery-img2.jpg" alt="featured gallery img"></li>
-										<li><img src="/assets/images/featured-gallery-img3.jpg" alt="featured gallery img"></li>
-										<li><img src="/assets/images/featured-gallery-img4.jpg" alt="featured gallery img"></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li class="menu-item"><a href="/about">About</a></li>
-						<li class="menu-item"><a href="/blog">Blog</a></li>
-						<li class="menu-item"><a href="/contact">Contact</a></li>
-					</ul>
-				</nav>
+				{{ partial:nav-primary }}
 			</div>
 		</header>
 		<!--/ End Header -->

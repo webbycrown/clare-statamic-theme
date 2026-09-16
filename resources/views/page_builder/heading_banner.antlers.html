@@ -1,0 +1,28 @@
+<!-- Heading banner section -->
+<section class="heading-banner-section {{ style }}">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="heading-banner-wrap">
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="/">Home</a></li>
+							<li class="breadcrumb-item active" aria-current="page">{{ breadcrumb_label ?? title }}</li>
+						</ol>
+					</nav>
+					<h1>{{ title_override ?? title }}</h1>
+					{{ if image }}
+					<div class="heading-banner-img">
+						<img src="{{ partial:partials/media-url :file='image' }}" alt="{{ title_override ?? title }}">
+					</div>
+					{{ else }}
+					<div class="heading-banner-img">
+						<img src="/assets/images/heading-banner-img.png" alt="heading banner img">
+					</div>
+					{{ /if }}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--/ End Heading banner section -->

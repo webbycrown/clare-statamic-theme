@@ -1,0 +1,67 @@
+<!-- New arrival section -->
+<section class="new-arrival-section {{ if style == 'v3' }}style-3{{ /if }} section-two">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				{{ if style == 'v3' }}
+				<div class="module-header style-3">
+					<div class="module-header-left">
+						<h2 class="entry-title">{{ heading ?? 'New Arrivals' }}</h2>
+						{{ if kicker }}<p>{{ kicker }}</p>{{ /if }}
+					</div>
+					<div class="entry-header-right">
+						<a href="{{ button_url ?? '/shop' }}" class="btn btn-dark btn-style-2">{{ button_label ?? 'Shop all' }}</a>
+					</div>
+				</div>
+				{{ else }}
+				<div class="module-header">
+					<h2 class="entry-title">{{ heading ?? 'New arrival' }}</h2>
+					<div class="entry-header-right">
+						<a href="{{ button_url ?? '/shop' }}" class="btn btn-dark btn-style-2">{{ button_label ?? 'Shop all' }}</a>
+					</div>
+				</div>
+				{{ /if }}
+				<div class="new-arrival-slider">
+					<div class="swiper mySwiper">
+						<div class="swiper-wrapper">
+							{{ clare_products paginate="{{ limit ?? 5 }}" }}
+							<div class="swiper-slide">
+								<div class="product {{ if style == 'v3' }}product-style-4{{ else }}product-style-3{{ /if }}">
+									<div class="product-thumbnail">
+										<a href="{{ url }}" class="thumbnail">
+											{{ if image }}<img src="{{ image:url }}" alt="{{ title }}">
+											{{ else }}<img src="/assets/images/new-arrival-img1.jpg" alt="{{ title }}">{{ /if }}
+										</a>
+										<div class="product-hover-button">
+											<a href="{{ url }}" class="select-option-btn">Select option</a>
+										</div>
+										<div class="product-buttons-icon">
+											<a href="{{ url }}" class="arrow-icon"><span class="ti-eye"></span></a>
+											<a href="/shop" class="arrow-icon"><span class="ti-shopping-cart"></span></a>
+											<a href="/account" class="arrow-icon"><span class="ti-heart"></span></a>
+										</div>
+									</div>
+									<div class="product-content">
+										<h3 class="product-title"><a href="{{ url }}">{{ title }}</a></h3>
+										<span class="price"><ins>{{ price | clare_money }}</ins></span>
+									</div>
+								</div>
+							</div>
+							{{ /clare_products }}
+						</div>
+						{{ if style != 'v3' }}
+						<div class="slider-arrow">
+							<div class="swiper-button-prev"><span class="ti-arrow-left"></span></div>
+							<div class="swiper-button-next"><span class="ti-arrow-right"></span></div>
+						</div>
+						{{ else }}
+						<div class="swiper-button-prev"><span class="ti-arrow-left"></span></div>
+						<div class="swiper-button-next"><span class="ti-arrow-right"></span></div>
+						{{ /if }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--/ End New arrival section -->

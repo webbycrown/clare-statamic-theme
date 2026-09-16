@@ -1,0 +1,67 @@
+<!-- Instagram section -->
+<div class="instagram-section section-two">
+	<div class="container">
+		<div class="row">
+			{{ if images }}
+			{{ images }}
+			<div class="col-4 col-sm-4 col-md-3">
+				<div class="instagram-box">
+					<img src="{{ partial:partials/media-url :file='url' }}" alt="instagram img">
+					<div class="instagram-overlay"><a href="#"><span class="ti-instagram"></span></a></div>
+				</div>
+			</div>
+			{{ /images }}
+			{{ else }}
+			<div class="col-4 col-sm-4 col-md-3">
+				<div class="instagram-box">
+					<img src="/assets/images/popular-categories-img3.jpg" alt="instagram img 1">
+					<div class="instagram-overlay"><a href="#"><span class="ti-instagram"></span></a></div>
+				</div>
+			</div>
+			<div class="col-4 col-sm-4 col-md-3">
+				<div class="instagram-box">
+					<img src="/assets/images/hero-grid-img.jpg" alt="instagram img 2">
+					<div class="instagram-overlay"><a href="#"><span class="ti-instagram"></span></a></div>
+				</div>
+			</div>
+			<div class="col-4 col-sm-4 col-md-3">
+				<div class="instagram-box">
+					<img src="/assets/images/products-img3.jpg" alt="instagram img 3">
+					<div class="instagram-overlay"><a href="#"><span class="ti-instagram"></span></a></div>
+				</div>
+			</div>
+			<div class="col-4 col-sm-4 col-md-3">
+				<div class="instagram-box">
+					<img src="/assets/images/weekly-product-img1.jpg" alt="instagram img 4">
+					<div class="instagram-overlay"><a href="#"><span class="ti-instagram"></span></a></div>
+				</div>
+			</div>
+			<div class="col-4 col-sm-4 col-md-3">
+				<div class="instagram-box">
+					<img src="/assets/images/popular-categories-img2.jpg" alt="instagram img 5">
+					<div class="instagram-overlay"><a href="#"><span class="ti-instagram"></span></a></div>
+				</div>
+			</div>
+			<div class="col-4 col-sm-4 col-md-3">
+				<div class="instagram-box">
+					<img src="/assets/images/products-img12.jpg" alt="instagram img 6">
+					<div class="instagram-overlay"><a href="#"><span class="ti-instagram"></span></a></div>
+				</div>
+			</div>
+			<div class="col-4 col-sm-4 col-md-3">
+				<div class="instagram-box">
+					<img src="/assets/images/top-collection-img2.jpg" alt="instagram img 7">
+					<div class="instagram-overlay"><a href="#"><span class="ti-instagram"></span></a></div>
+				</div>
+			</div>
+			<div class="col-4 col-sm-4 col-md-3">
+				<div class="instagram-box">
+					<img src="/assets/images/season-product-img2.jpg" alt="instagram img 8">
+					<div class="instagram-overlay"><a href="#"><span class="ti-instagram"></span></a></div>
+				</div>
+			</div>
+			{{ /if }}
+		</div>
+	</div>
+</div>
+<!--/ End Instagram section -->

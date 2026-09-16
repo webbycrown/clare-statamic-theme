@@ -1,0 +1,46 @@
+<!-- Season Collection section -->
+<section class="season-collection-section section-two">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="module-header">
+					<h2 class="entry-title">{{ heading ?? 'Trending Collection' }}</h2>
+					<div class="entry-header-right">
+						<div class="slider-arrow no-box-arrow">
+							<div class="swiper-button-prev"><span class="ti-arrow-left"></span></div>
+							<div class="swiper-button-next"><span class="ti-arrow-right"></span></div>
+						</div>
+					</div>
+				</div>
+				<div class="season-collection-slider">
+					<div class="swiper mySwiper">
+						<div class="swiper-wrapper">
+							{{ taxonomy:product_category }}
+							<div class="swiper-slide">
+								<div class="product product-style-2">
+									<div class="product-thumbnail">
+										<a href="/categories/{{ slug }}" class="thumbnail">
+											{{ if image }}<img src="{{ image:url }}" alt="{{ title }}">
+											{{ else }}<img src="/assets/images/season-product-img1.jpg" alt="{{ title }}">{{ /if }}
+										</a>
+									</div>
+									<div class="product-content-overlay">
+										<div class="product-overlay-title">
+											<h3 class="product-title"><a href="/categories/{{ slug }}">{{ title }}</a></h3>
+											<span class="items-count">{{ entries_count }} items</span>
+										</div>
+										<div class="product-arrow">
+											<a href="/categories/{{ slug }}" class="arrow-icon"><span class="ti-arrow-right"></span></a>
+										</div>
+									</div>
+								</div>
+							</div>
+							{{ /taxonomy:product_category }}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--/ End Season Collection section -->

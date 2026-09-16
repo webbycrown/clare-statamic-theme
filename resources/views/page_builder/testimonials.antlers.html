@@ -1,0 +1,68 @@
+<!-- Testimonial section -->
+<section class="testimonial-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="testimonial-slider">
+					<div class="row">
+						<div class="col-12 col-md-6 order-2 order-md-1">
+							<div class="swiper mySwiper2">
+								<div class="swiper-wrapper">
+									{{ if items }}
+									{{ items }}
+									<div class="swiper-slide">
+										<div class="testimonial-content">
+											<h2>{{ heading ?? "Customer's review" }}</h2>
+											<p>{{ text }}</p>
+											<div class="testimonial-user-info">
+												{{ if image }}<div class="testimonial-user-img"><img src="{{ partial:partials/media-url :file='image' }}" alt="{{ name }}"></div>{{ /if }}
+												<h6 class="testimonial-user-name">{{ name }}</h6>
+											</div>
+										</div>
+									</div>
+									{{ /items }}
+									{{ else }}
+									<div class="swiper-slide">
+										<div class="testimonial-content">
+											<h2>{{ heading ?? "Customer's review" }}</h2>
+											<p>I bought the merino liner for travel and now wear it most weeks. It layers under a coat without bulk and still looks tidy on its own in the office.</p>
+											<div class="testimonial-user-info">
+												<div class="testimonial-user-img"><img src="/assets/images/products-img4.jpg" alt="testimonial"></div>
+												<h6 class="testimonial-user-name">Raymon worime</h6>
+											</div>
+										</div>
+									</div>
+									{{ /if }}
+								</div>
+								<div class="swiper-pagination"></div>
+							</div>
+						</div>
+						<div class="col-12 col-md-6 order-1 order-md-2 ps-0 pe-0 ps-md-2 pe-md-2">
+							<div class="swiper mySwiper testimonial-thumbnail">
+								<div class="swiper-wrapper">
+									{{ if items }}
+									{{ items }}
+									<div class="swiper-slide">
+										<div class="testimonial-right-image">
+											{{ if right_image }}<img src="{{ partial:partials/media-url :file='right_image' }}" alt="{{ name }}">
+											{{ else }}<img src="/assets/images/testimonial-right-image.jpg" alt="testimonial">{{ /if }}
+										</div>
+									</div>
+									{{ /items }}
+									{{ else }}
+									<div class="swiper-slide">
+										<div class="testimonial-right-image">
+											<img src="/assets/images/testimonial-right-image.jpg" alt="testimonial img">
+										</div>
+									</div>
+									{{ /if }}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--/ End Testimonial section -->

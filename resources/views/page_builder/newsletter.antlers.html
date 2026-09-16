@@ -1,0 +1,17 @@
+<!-- Newsletter section -->
+<section class="newsletter-section">
+	{{ if left_image }}<div class="newsletter-left-img"><img src="{{ partial:partials/media-url :file='left_image' }}" alt="newsletter img"></div>{{ else }}<div class="newsletter-left-img"><img src="/assets/images/discount-img2.png" alt="newsletter img"></div>{{ /if }}
+	{{ if right_image }}<div class="newsletter-right-img"><img src="{{ partial:partials/media-url :file='right_image' }}" alt="newsletter img"></div>{{ else }}<div class="newsletter-right-img"><img src="/assets/images/discount-img1.png" alt="newsletter img"></div>{{ /if }}
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="newsletter-content">
+					<h2>{{ heading ?? 'Get 20% Off Discount Coupon' }}</h2>
+					<p>{{ text ?? 'by Subscribe our Newsletter' }}</p>
+					{{ partial:newsletter-form }}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--/ End Newsletter section -->

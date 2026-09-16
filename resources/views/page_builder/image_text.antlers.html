@@ -1,0 +1,33 @@
+<!-- Image with text section -->
+<section class="image-with-text-section section-two">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="image-with-text-box">
+					<div class="row align-items-center">
+						<div class="col-12 col-md-6">
+							<div class="banner-image">
+								{{ if image }}
+								<img src="{{ partial:partials/media-url :file='image' }}" alt="{{ heading }}">
+								{{ else }}
+								<img src="/assets/images/sale-event-img.jpg" alt="sale-event img">
+								{{ /if }}
+							</div>
+						</div>
+						<div class="col-12 col-md-6">
+							<div class="image-with-text-des">
+								{{ if subtitle }}<h4 class="entry-subtitle">{{ subtitle }}</h4>{{ /if }}
+								<h2 class="entry-title">{{ heading }}</h2>
+								{{ if text }}<p>{{ text }}</p>{{ /if }}
+								{{ if button_label }}
+								<a href="{{ button_url ?? '/shop' }}" class="btn btn-dark btn-style-2">{{ button_label }}</a>
+								{{ /if }}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--/ End Image with text section -->

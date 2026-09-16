@@ -1,16 +1,55 @@
-title: Page
+title: Pages
 tabs:
   main:
-    display: Main
+    display: Page
     sections:
       -
+        display: Content
         fields:
-          - { handle: title, field: { type: text, required: true, validate: [required] } }
-          - { handle: template, field: { type: template, display: Template } }
-          - { import: all_page_builder }
-  sidebar:
-    display: Sidebar
+          -
+            handle: title
+            field:
+              type: text
+              display: Title
+              validate:
+                - required
+          -
+            handle: excerpt
+            field:
+              type: textarea
+              display: Excerpt
+              instructions: Short intro. Optional.
+      -
+        display: Theme sections
+        instructions: Every page uses the same Page template. Add any section here and drag to reorder.
+        fields:
+          -
+            import: page_builder
+      -
+        display: Page chrome
+        fields:
+          -
+            handle: template
+            field:
+              type: hidden
+              default: page
+          -
+            handle: body_class
+            field:
+              type: text
+              display: Body Class
+              instructions: Optional. Use index-2 for Home Two header.
+          -
+            handle: header_style
+            field:
+              type: text
+              display: Header Style
+              instructions: 'Optional. Use two for header-two, three for header-three.'
+  seo:
+    display: SEO
     sections:
       -
+        display: Search and social
         fields:
-          - { handle: slug, field: { type: slug, validate: 'max:200' } }
+          -
+            import: seo

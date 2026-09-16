@@ -1,0 +1,31 @@
+<!-- Popular Categories section -->
+<section class="popular-categories-section {{ if style == 'v3' }}style-3 section-two{{ else }}section-all{{ /if }}">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="popular-categories-wrap">
+					{{ if style == 'v3' }}
+					<div class="module-header style-3">
+						<div class="module-header-left">
+							<h2 class="entry-title">{{ heading ?? 'Popular Categories' }}</h2>
+							{{ if subtitle }}<p>{{ subtitle }}</p>{{ /if }}
+						</div>
+					</div>
+					{{ partial:popular-categories v3="true" }}
+					{{ else }}
+					<div class="module-header">
+						<h2 class="entry-title">{{ heading ?? 'Popular Categories' }}</h2>
+						{{ if show_all_link !== false }}
+						<div class="entry-header-right">
+							<a href="/categories" class="btn link">Shop all categories <span class="ti-arrow-right"></span></a>
+						</div>
+						{{ /if }}
+					</div>
+					{{ partial:popular-categories }}
+					{{ /if }}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--/ End Popular Categories section -->

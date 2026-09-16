@@ -1,3 +1,6 @@
+title: Clare Theme
+user: webbycrown
+repo: webbycrown/clare-statamic-theme
 export_paths:
   - routes
   - content
@@ -12,5 +15,5 @@ export_paths:
   - resources/forms
   - resources/views
   - public/assets
-  - storage/forms
+  - THIRD_PARTY.md
   - README.md

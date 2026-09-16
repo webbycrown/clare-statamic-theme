@@ -1,0 +1,55 @@
+<!-- Banner adds section -->
+<section class="banner-adds-section section-all">
+	<div class="container">
+		<div class="row">
+			{{ if banners }}
+			{{ banners }}
+			<div class="{{ if size == 'large' }}col-12 col-md-6 pe-lg-4{{ else }}col-12 col-md-6 ps-lg-4{{ /if }}">
+				<div class="banner {{ if size == 'small' }}banner-small{{ /if }}">
+					<div class="banner-content">
+						{{ if subtitle }}<h4 class="entry-subtitle">{{ subtitle }}</h4>{{ /if }}
+						<h2 class="entry-title">{{ title }}</h2>
+						<a href="{{ button_url ?? '/shop' }}" class="btn link">{{ button_label ?? 'Shop Now' }} <span class="ti-arrow-right"></span></a>
+					</div>
+					{{ if image }}
+					<div class="banner-image">
+						<img src="{{ partial:partials/media-url :file='image' }}" alt="{{ title }}">
+					</div>
+					{{ /if }}
+				</div>
+			</div>
+			{{ /banners }}
+			{{ else }}
+			<div class="col-12 col-md-6 pe-lg-4">
+				<div class="banner">
+					<div class="banner-content">
+						<h4 class="entry-subtitle">New season</h4>
+						<h2 class="entry-title">Big patterns are back in fashion</h2>
+						<a href="/shop" class="btn link">Shop Now <span class="ti-arrow-right"></span></a>
+					</div>
+					<div class="banner-image"><img src="/assets/images/banner-img1.jpg" alt="banner img 1"></div>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 ps-lg-4">
+				<div class="banner banner-small">
+					<div class="banner-content">
+						<h4 class="entry-subtitle">New season</h4>
+						<h2 class="entry-title">The Latest trend</h2>
+						<a href="/shop" class="btn link">Shop Now <span class="ti-arrow-right"></span></a>
+					</div>
+					<div class="banner-image"><img src="/assets/images/banner-img2.jpg" alt="banner img 2"></div>
+				</div>
+				<div class="banner banner-small">
+					<div class="banner-content">
+						<h4 class="entry-subtitle">New season</h4>
+						<h2 class="entry-title">Top new collection</h2>
+						<a href="/shop" class="btn link">Shop Now <span class="ti-arrow-right"></span></a>
+					</div>
+					<div class="banner-image"><img src="/assets/images/banner-img3.jpg" alt="banner img 3"></div>
+				</div>
+			</div>
+			{{ /if }}
+		</div>
+	</div>
+</section>
+<!--/ End banner adds section -->

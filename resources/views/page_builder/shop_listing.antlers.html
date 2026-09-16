@@ -1,0 +1,73 @@
+<!-- Shop page section -->
+<section class="shop-page-grid-section style-3 section-two">
+	<div class="container">
+		<div class="row">
+			{{ if style == 'list' or style == 'grid' }}
+			<div class="col-12 col-md-3">
+				<div class="sidebar">
+					<div class="sidebar-inner">
+						<div class="filter-close d-md-none"><span class="ti-close"></span></div>
+						<h3 class="sidebar-title">Filter</h3>
+						{{ partial:shop-filters }}
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-9">
+				{{ partial:shop-toolbar }}
+				{{ if style == 'list' }}
+				<div class="row">
+					{{ clare_products paginate="12" }}
+					<div class="col-12 mb-4">{{ partial:cards/product-list }}</div>
+					{{ /clare_products }}
+					{{ if {clare_products:count} == 0 }}
+					<div class="col-12">
+						<div class="shop-empty">
+							<h3>No products found</h3>
+							<p>Nothing matches this filter. Try another range or clear the filters.</p>
+							<a class="btn btn-dark" href="/shop">Clear filters</a>
+						</div>
+					</div>
+					{{ /if }}
+					<div class="col-12">{{ partial:shop-pagination }}</div>
+				</div>
+				{{ else }}
+				{{ partial:shop-grid }}
+				{{ /if }}
+			</div>
+			{{ elseif style == 'right_sidebar' }}
+			<div class="col-12 col-md-9">
+				{{ partial:shop-toolbar }}
+				{{ partial:shop-grid }}
+			</div>
+			<div class="col-12 col-md-3">
+				<div class="sidebar">
+					<div class="sidebar-inner">
+						<h3 class="sidebar-title">Filter</h3>
+						{{ partial:shop-filters }}
+					</div>
+				</div>
+			</div>
+			{{ elseif style == 'three_column' }}
+			<div class="col-12">
+				{{ partial:shop-toolbar }}
+				{{ partial:shop-grid three_col="true" }}
+			</div>
+			{{ else }}
+			<div class="col-12 col-md-3">
+				<div class="sidebar">
+					<div class="sidebar-inner">
+						<div class="filter-close d-md-none"><span class="ti-close"></span></div>
+						<h3 class="sidebar-title">Filter</h3>
+						{{ partial:shop-filters }}
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-9">
+				{{ partial:shop-toolbar }}
+				{{ partial:shop-grid }}
+			</div>
+			{{ /if }}
+		</div>
+	</div>
+</section>
+<!--/ End Shop page section -->

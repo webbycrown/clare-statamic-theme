@@ -1,0 +1,30 @@
+<!-- Trending Collection section -->
+<section class="trending-collection-section section-all">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="module-header">
+					<h2 class="entry-title">{{ heading ?? 'Trending Collection' }}</h2>
+					<div class="entry-header-right">
+						<div class="slider-arrow">
+							<div class="swiper-button-prev"><span class="ti-arrow-left"></span></div>
+							<div class="swiper-button-next"><span class="ti-arrow-right"></span></div>
+						</div>
+					</div>
+				</div>
+				<div class="trending-collection-slider">
+					<div class="swiper mySwiper">
+						<div class="swiper-wrapper">
+							{{ clare_products paginate="{{ limit ?? 8 }}" }}
+							<div class="swiper-slide">
+								{{ partial:cards/product }}
+							</div>
+							{{ /clare_products }}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--/ End Trending Collection section -->

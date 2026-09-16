@@ -1,6 +1,85 @@
 tree:
-  - { title: Home, url: / }
-  - { title: Shop, url: /shop }
-  - { title: About, url: /about }
-  - { title: Blog, url: /blog }
-  - { title: Contact, url: /contact }
+  -
+    title: Home
+    url: /
+    children:
+      -
+        title: Home V1
+        url: /
+      -
+        title: Home V2
+        url: /home-v2
+      -
+        title: Home V3
+        url: /home-v3
+  -
+    title: Shop
+    url: /shop
+    children:
+      -
+        title: Shop Grid
+        url: /shop
+      -
+        title: Shop List
+        url: /shop/list
+      -
+        title: Shop Right Sidebar
+        url: /shop/right-sidebar
+      -
+        title: Shop Three Column
+        url: /shop/three-column
+      -
+        title: Categories
+        url: /categories
+      -
+        title: Cart
+        url: /cart
+  -
+    title: Pages
+    children:
+      -
+        title: About
+        url: /about
+      -
+        title: Contact
+        url: /contact
+      -
+        title: FAQ
+        url: /faqs
+      -
+        title: Privacy Policy
+        url: /privacy
+      -
+        title: Terms
+        url: /terms
+      -
+        title: Site Map
+        url: /sitemap
+      -
+        title: Account
+        url: /account
+      -
+        title: Login
+        url: /login
+      -
+        title: Register
+        url: /register
+  -
+    title: Blog
+    url: /blog
+    children:
+      -
+        title: Blog Grid
+        url: /blog
+      -
+        title: Blog Grid 2
+        url: /blog/grid-2
+      -
+        title: Blog Classic
+        url: /blog/classic
+  -
+    title: About
+    url: /about
+  -
+    title: Contact
+    url: /contact

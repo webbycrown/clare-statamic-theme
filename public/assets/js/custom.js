@@ -367,6 +367,42 @@ Home one js
             $('.search-bar').toggleClass("open");
           });
 
+          /* Contact form over AJAX — stay on the page */
+          $(document).on("submit", "form.js-clare-contact", function(e){
+            e.preventDefault();
+            var $form = $(this);
+            var $msg = $form.find(".clare-form-msg");
+            var $btn = $form.find("button[type='submit']");
+            var label = $btn.text();
+            $msg.removeClass("is-ok is-err").empty().attr("hidden", true);
+            $form.addClass("is-sending");
+            $btn.prop("disabled", true).text("Sending…");
+
+            $.ajax({
+              url: $form.attr("action"),
+              type: "POST",
+              data: $form.serialize(),
+              headers: { "X-Requested-With": "XMLHttpRequest", "Accept": "application/json" },
+              success: function(){
+                $msg.addClass("is-ok").text("Message sent. We will get back to you shortly.").removeAttr("hidden");
+                $form.find(".form-group").hide();
+                $btn.hide();
+              },
+              error: function(xhr){
+                var data = xhr.responseJSON || {};
+                var errors = data.errors || [];
+                if (!errors.length && data.error) {
+                  errors = Object.keys(data.error).map(function(key){ return data.error[key]; });
+                }
+                $msg.addClass("is-err").text(errors[0] || "Please check your name, email, and message.").removeAttr("hidden");
+              },
+              complete: function(){
+                $form.removeClass("is-sending");
+                $btn.prop("disabled", false).text(label);
+              }
+            });
+          });
+
           /* Cart inquiry over AJAX — email admin with cart lines */
           $(document).on("submit", "form.js-clare-cart-inquiry", function(e){
             e.preventDefault();

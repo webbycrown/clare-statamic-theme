@@ -1,0 +1,18 @@
+<!-- About video section -->
+<div class="about-video-section section-two">
+	<div class="full-video">
+		{{ if poster }}
+		<img src="{{ partial:partials/media-url :file='poster' }}" alt="video bg img">
+		{{ else }}
+		<img src="/assets/images/video-bg-img.jpg" alt="video bg img">
+		{{ /if }}
+		<a href="{{ video_url ?? 'http://www.youtube.com/watch?v=0O2aH4XLbto' }}" class="video-play-icon">
+			{{ if play_icon }}
+			<img src="{{ partial:partials/media-url :file='play_icon' }}" alt="play icon">
+			{{ else }}
+			<img src="/assets/images/video-play-icon.svg" alt="video-play icon">
+			{{ /if }}
+		</a>
+	</div>
+</div>
+<!--/ End About video section -->

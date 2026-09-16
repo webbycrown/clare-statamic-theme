@@ -1,0 +1,25 @@
+<!-- Hero grid banner section -->
+<section class="hero-grid-banner-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-md-6 order-2 order-md-1">
+				<div class="hero-banner-content">
+					{{ if subtitle }}<h4 class="entry-subtitle">{{ subtitle }}</h4>{{ /if }}
+					<h1>{{ heading ?? 'Essential collections' }}</h1>
+					{{ if text }}<p>{{ text }}</p>{{ /if }}
+					<a href="{{ button_url ?? '/shop' }}" class="btn btn-dark btn-style-2">{{ button_label ?? 'View collection' }}</a>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 order-1 order-md-2">
+				<div class="hero-banner-img">
+					{{ if image }}
+					<img src="{{ partial:partials/media-url :file='image' }}" alt="{{ heading }}">
+					{{ else }}
+					<img src="/assets/images/hero-grid-img.jpg" alt="hero-grid-img">
+					{{ /if }}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--/ End Hero grid banner section -->

@@ -1,0 +1,31 @@
+<!-- Offer banner section -->
+<section class="offer-banner-section {{ if style == 'v3' }}style-3 section-two{{ else }}section-all{{ /if }}">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="offer-banner">
+					{{ if style == 'v3' }}
+					{{ if image }}
+					<div class="offer-banner-img">
+						<img src="{{ partial:partials/media-url :file='image' }}" alt="{{ heading }}">
+					</div>
+					{{ /if }}
+					<div class="offer-banner-content">
+						{{ if subtitle }}<h4 class="entry-subtitle">{{ subtitle }}</h4>{{ /if }}
+						<h2>{{ heading ?? 'URBAN SPIRIT COLLECTION' }}</h2>
+						<a href="{{ button_url ?? '/shop' }}" class="btn btn-dark btn-style-2">{{ button_label ?? 'Shop now' }}</a>
+					</div>
+					{{ else }}
+					<div class="offer-banner-content" style="{{ if background_image }}background-image: url('{{ partial:partials/media-url :file='background_image' }}');{{ /if }}">
+						<h2>{{ heading ?? 'Offer On Point 3 Shoes' }}</h2>
+						{{ if text }}<p>{{ text }}</p>{{ /if }}
+						{{ if price }}<span class="price"><ins>{{ price | clare_money }}</ins>{{ if compare_price }} <del>{{ compare_price | clare_money }}</del>{{ /if }}</span>{{ /if }}
+						<a href="{{ button_url ?? '/shop' }}" class="btn btn-light">{{ button_label ?? 'GET THIS DEAL' }}</a>
+					</div>
+					{{ /if }}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--/ End offer banner section -->

@@ -1,0 +1,42 @@
+<!-- Icon box section -->
+<section class="icon-box-section {{ if style == 'v2' }}style-2 section-two{{ else }}section-all{{ /if }}">
+	<div class="container">
+		<div class="row">
+			{{ if boxes }}
+			{{ boxes }}
+			<div class="col-{{ if style == 'v2' }}6 col-sm-6 col-md-6 col-lg-3{{ else }}12 col-md-4{{ /if }}">
+				<div class="icon-box">
+					<div class="iconbox-icon">
+						{{ if icon }}<img src="{{ partial:partials/media-url :file='icon' }}" alt="{{ title }}">{{ /if }}
+					</div>
+					<div class="iconbox-detail">
+						<h6>{{ title }}</h6>
+						{{ if text }}<p>{{ text }}</p>{{ /if }}
+					</div>
+				</div>
+			</div>
+			{{ /boxes }}
+			{{ else }}
+			<div class="col-12 col-md-4">
+				<div class="icon-box">
+					<div class="iconbox-icon"><img src="/assets/images/free-shipping-icon.svg" alt="Free Shipping"></div>
+					<div class="iconbox-detail"><h6>Free Shipping</h6><p>When ordering over $100</p></div>
+				</div>
+			</div>
+			<div class="col-12 col-md-4">
+				<div class="icon-box">
+					<div class="iconbox-icon"><img src="/assets/images/easy-return-icon.svg" alt="Easy return"></div>
+					<div class="iconbox-detail"><h6>Easy return</h6><p>Get Return within 30 days</p></div>
+				</div>
+			</div>
+			<div class="col-12 col-md-4">
+				<div class="icon-box">
+					<div class="iconbox-icon"><img src="/assets/images/secure-payment-icon.svg" alt="Secure Payment"></div>
+					<div class="iconbox-detail"><h6>Secure Payment</h6><p>100% Secure Online Payment</p></div>
+				</div>
+			</div>
+			{{ /if }}
+		</div>
+	</div>
+</section>
+<!--/ End Icon box section -->

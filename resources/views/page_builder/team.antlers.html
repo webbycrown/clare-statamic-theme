@@ -1,0 +1,55 @@
+<!-- Our Team section -->
+<section class="our-team-section section-two">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<h2>{{ heading ?? 'Our Team' }}</h2>
+			</div>
+			{{ if members }}
+			{{ members }}
+			<div class="col-12 col-md-6 col-lg-3">
+				<div class="our-team-grid">
+					<div class="team-thumbnail">
+						{{ if image }}
+						<a href="#" class="thumbnail"><img src="{{ partial:partials/media-url :file='image' }}" alt="{{ name }}"></a>
+						{{ else }}
+						<a href="#" class="thumbnail"><img src="/assets/images/team-img1.jpg" alt="{{ name }}"></a>
+						{{ /if }}
+					</div>
+					<div class="our-team-info">
+						<h6><a href="#">{{ name }}</a> <span>{{ role }}</span></h6>
+						{{ if bio }}<p>{{ bio }}</p>{{ /if }}
+					</div>
+				</div>
+			</div>
+			{{ /members }}
+			{{ else }}
+			<div class="col-12 col-md-6 col-lg-3">
+				<div class="our-team-grid">
+					<div class="team-thumbnail"><a href="#" class="thumbnail"><img src="/assets/images/team-img1.jpg" alt="team img"></a></div>
+					<div class="our-team-info"><h6><a href="#">Nasri sidque</a> <span>Manager</span></h6><p>Looks after fabric, fit, and the small details that make a coat worth wearing every day.</p></div>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3">
+				<div class="our-team-grid">
+					<div class="team-thumbnail"><a href="#" class="thumbnail"><img src="/assets/images/team-img2.jpg" alt="team img"></a></div>
+					<div class="our-team-info"><h6><a href="#">Jack Know</a> <span>CEO</span></h6><p>Looks after fabric, fit, and the small details that make a coat worth wearing every day.</p></div>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3">
+				<div class="our-team-grid">
+					<div class="team-thumbnail"><a href="#" class="thumbnail"><img src="/assets/images/team-img3.jpg" alt="team img"></a></div>
+					<div class="our-team-info"><h6><a href="#">Nora vue</a> <span>Product tester</span></h6><p>Looks after fabric, fit, and the small details that make a coat worth wearing every day.</p></div>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3">
+				<div class="our-team-grid">
+					<div class="team-thumbnail"><a href="#" class="thumbnail"><img src="/assets/images/team-img4.jpg" alt="team img"></a></div>
+					<div class="our-team-info"><h6><a href="#">lora andrew</a> <span>Product Designer</span></h6><p>Looks after fabric, fit, and the small details that make a coat worth wearing every day.</p></div>
+				</div>
+			</div>
+			{{ /if }}
+		</div>
+	</div>
+</section>
+<!--/ End Our Team section -->

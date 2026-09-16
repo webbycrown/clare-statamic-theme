@@ -8,10 +8,10 @@
 					<div class="col-12">
 						<!-- footer top -->
 						<div class="footer-top">
-							<!-- site-brand -->
-							<div class="site-brand">
-								<a href="/"><img src="/assets/images/logo-dark.svg" alt="logo"></a>
-							</div>
+						<!-- site-brand -->
+						<div class="site-brand">
+							<a href="/">{{ setting }}<img src="{{ partial:partials/media-url :file='logo' fallback='images/logo-dark.svg' }}" alt="{{ site_name ?? 'Clare' }}">{{ /setting }}</a>
+						</div>
 						</div>
 					</div>
 				</div>

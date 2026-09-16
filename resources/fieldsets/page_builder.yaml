@@ -1,0 +1,950 @@
+title: Page builder
+fields:
+  -
+    handle: page_builder
+    field:
+      type: replicator
+      display: Theme sections
+      instructions: One page template. Add any section to this page and drag to reorder.
+      button_label: Add section
+      collapse: accordion
+      sets:
+        home:
+          display: Home
+          sets:
+            home_hero:
+              display: Home hero (V1 — card)
+              fields:
+                -
+                  handle: subtitle
+                  field:
+                    type: text
+                    display: Subtitle
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                -
+                  handle: text
+                  field:
+                    type: textarea
+                    display: Text
+                -
+                  handle: button_label
+                  field:
+                    type: text
+                    display: Button label
+                    default: 'Shop Now'
+                -
+                  handle: button_url
+                  field:
+                    type: text
+                    display: Button URL
+                    default: '/shop'
+                -
+                  handle: image
+                  field:
+                    type: assets
+                    display: Hero image
+                    container: assets
+                    max_files: 1
+
+            hero_slider:
+              display: Hero slider (V2)
+              fields:
+                -
+                  handle: slides
+                  field:
+                    type: replicator
+                    display: Slides
+                    button_label: Add slide
+                    sets:
+                      slide:
+                        display: Slide
+                        fields:
+                          -
+                            handle: subtitle
+                            field:
+                              type: text
+                              display: Subtitle
+                          -
+                            handle: heading
+                            field:
+                              type: text
+                              display: Heading
+                          -
+                            handle: text
+                            field:
+                              type: textarea
+                              display: Text
+                          -
+                            handle: button_label
+                            field:
+                              type: text
+                              display: Button label
+                          -
+                            handle: button_url
+                            field:
+                              type: text
+                              display: Button URL
+                          -
+                            handle: image
+                            field:
+                              type: assets
+                              display: Image
+                              container: assets
+                              max_files: 1
+
+            hero_grid:
+              display: Hero grid (V3)
+              fields:
+                -
+                  handle: subtitle
+                  field:
+                    type: text
+                    display: Subtitle / kicker
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                -
+                  handle: text
+                  field:
+                    type: textarea
+                    display: Text
+                -
+                  handle: button_label
+                  field:
+                    type: text
+                    display: Button label
+                    default: 'View collection'
+                -
+                  handle: button_url
+                  field:
+                    type: text
+                    display: Button URL
+                    default: '/shop'
+                -
+                  handle: image
+                  field:
+                    type: assets
+                    display: Hero image
+                    container: assets
+                    max_files: 1
+
+        products:
+          display: Products
+          sets:
+            icon_boxes:
+              display: Icon boxes (shipping / return / payment)
+              fields:
+                -
+                  handle: style
+                  field:
+                    type: select
+                    display: Style
+                    default: v1
+                    options:
+                      v1: Home V1
+                      v2: Home V2 (4 boxes)
+                -
+                  handle: boxes
+                  field:
+                    type: grid
+                    display: Boxes
+                    fields:
+                      -
+                        handle: icon
+                        field:
+                          type: assets
+                          display: Icon image
+                          container: assets
+                          max_files: 1
+                      -
+                        handle: title
+                        field:
+                          type: text
+                          display: Title
+                      -
+                        handle: text
+                        field:
+                          type: text
+                          display: Text
+
+            promo_banners:
+              display: Promo banners
+              fields:
+                -
+                  handle: banners
+                  field:
+                    type: grid
+                    display: Banners
+                    fields:
+                      -
+                        handle: subtitle
+                        field:
+                          type: text
+                          display: Subtitle
+                      -
+                        handle: title
+                        field:
+                          type: text
+                          display: Title
+                      -
+                        handle: button_label
+                        field:
+                          type: text
+                          display: Button label
+                          default: 'Shop Now'
+                      -
+                        handle: button_url
+                        field:
+                          type: text
+                          display: Button URL
+                          default: '/shop'
+                      -
+                        handle: image
+                        field:
+                          type: assets
+                          display: Image
+                          container: assets
+                          max_files: 1
+                      -
+                        handle: size
+                        field:
+                          type: select
+                          display: Size
+                          default: large
+                          options:
+                            large: Large
+                            small: Small
+
+            popular_categories:
+              display: Popular categories
+              fields:
+                -
+                  handle: style
+                  field:
+                    type: select
+                    display: Style
+                    default: v1
+                    options:
+                      v1: Home V1
+                      v3: Home V3 (with subtitle)
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                    default: 'Popular Categories'
+                -
+                  handle: subtitle
+                  field:
+                    type: text
+                    display: Subtitle (V3 only)
+                -
+                  handle: show_all_link
+                  field:
+                    type: toggle
+                    display: Show "Shop all" link
+                    default: true
+
+            trending_collection:
+              display: Trending collection
+              fields:
+                -
+                  import: section_heading
+                -
+                  handle: limit
+                  field:
+                    type: integer
+                    display: Number of products
+                    default: 8
+
+            offer_banner:
+              display: Offer banner
+              fields:
+                -
+                  handle: style
+                  field:
+                    type: select
+                    display: Style
+                    default: v1
+                    options:
+                      v1: Home V1 (with price)
+                      v3: Home V3 (collection promo)
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                -
+                  handle: text
+                  field:
+                    type: textarea
+                    display: Text
+                -
+                  handle: price
+                  field:
+                    type: text
+                    display: Price (V1 only)
+                -
+                  handle: compare_price
+                  field:
+                    type: text
+                    display: Compare price (V1 only)
+                -
+                  handle: subtitle
+                  field:
+                    type: text
+                    display: Subtitle / kicker (V3 only)
+                -
+                  handle: button_label
+                  field:
+                    type: text
+                    display: Button label
+                    default: 'GET THIS DEAL'
+                -
+                  handle: button_url
+                  field:
+                    type: text
+                    display: Button URL
+                    default: '/shop'
+                -
+                  handle: image
+                  field:
+                    type: assets
+                    display: Image
+                    container: assets
+                    max_files: 1
+                -
+                  handle: background_image
+                  field:
+                    type: assets
+                    display: Background image (V1 only)
+                    container: assets
+                    max_files: 1
+
+            featured_products:
+              display: Featured products
+              fields:
+                -
+                  import: section_heading
+                -
+                  handle: limit
+                  field:
+                    type: integer
+                    display: Number of products
+                    default: 8
+                -
+                  handle: button_label
+                  field:
+                    type: text
+                    display: Shop all label
+                    default: 'Shop all'
+                -
+                  handle: button_url
+                  field:
+                    type: text
+                    display: Shop all URL
+                    default: '/shop'
+
+            weekly_bestsellers:
+              display: Weekly best sellers
+              fields:
+                -
+                  import: section_heading
+                -
+                  handle: limit
+                  field:
+                    type: integer
+                    display: Number of products
+                    default: 6
+
+            season_collection:
+              display: Season collection (V2)
+              fields:
+                -
+                  import: section_heading
+
+            bestsellers:
+              display: Best sellers (V2)
+              fields:
+                -
+                  import: section_heading
+                -
+                  handle: limit
+                  field:
+                    type: integer
+                    display: Number of products
+                    default: 8
+                -
+                  handle: button_label
+                  field:
+                    type: text
+                    display: Explore more label
+                    default: 'Explore more'
+                -
+                  handle: button_url
+                  field:
+                    type: text
+                    display: Explore more URL
+                    default: '/shop'
+
+            new_arrival:
+              display: New arrival
+              fields:
+                -
+                  handle: style
+                  field:
+                    type: select
+                    display: Style
+                    default: v2
+                    options:
+                      v2: Home V2 (style 3 cards)
+                      v3: Home V3 (style 4 cards)
+                -
+                  import: section_heading
+                -
+                  handle: limit
+                  field:
+                    type: integer
+                    display: Number of products
+                    default: 5
+                -
+                  handle: button_label
+                  field:
+                    type: text
+                    display: Button label
+                    default: 'Shop all'
+                -
+                  handle: button_url
+                  field:
+                    type: text
+                    display: Button URL
+                    default: '/shop'
+
+            last_chance_sale:
+              display: Last chance sale (V3)
+              fields:
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                    default: 'Last Chance Sale'
+                -
+                  handle: subtitle
+                  field:
+                    type: text
+                    display: Subtitle
+                -
+                  handle: countdown_date
+                  field:
+                    type: text
+                    display: Countdown end date
+                    instructions: 'ISO 8601 format, e.g. 2025-12-31T23:59:59'
+                -
+                  handle: limit
+                  field:
+                    type: integer
+                    display: Number of products
+                    default: 4
+
+            top_collection:
+              display: Top collection (V3)
+              fields:
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                    default: 'Top collection'
+                -
+                  handle: banner_title
+                  field:
+                    type: text
+                    display: Banner title
+                -
+                  handle: banner_button_label
+                  field:
+                    type: text
+                    display: Banner button label
+                    default: 'Shop Now'
+                -
+                  handle: banner_button_url
+                  field:
+                    type: text
+                    display: Banner button URL
+                    default: '/shop'
+                -
+                  handle: banner_image
+                  field:
+                    type: assets
+                    display: Banner image
+                    container: assets
+                    max_files: 1
+                -
+                  handle: limit
+                  field:
+                    type: integer
+                    display: Number of products
+                    default: 4
+
+        content:
+          display: Content
+          sets:
+            heading_banner:
+              display: Heading banner (breadcrumb + title)
+              fields:
+                -
+                  handle: title_override
+                  field:
+                    type: text
+                    display: Override title
+                    instructions: Leave blank to use the page title.
+                -
+                  handle: breadcrumb_label
+                  field:
+                    type: text
+                    display: Breadcrumb label
+                    instructions: Label for the current page in the breadcrumb.
+                -
+                  handle: image
+                  field:
+                    type: assets
+                    display: Banner image (optional)
+                    container: assets
+                    max_files: 1
+                -
+                  handle: style
+                  field:
+                    type: select
+                    display: Style modifier
+                    default: ''
+                    options:
+                      '': Default
+                      cms-heading: CMS heading
+
+            newsletter:
+              display: Newsletter
+              fields:
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                    default: 'Get 20% Off Discount Coupon'
+                -
+                  handle: text
+                  field:
+                    type: text
+                    display: Text
+                    default: 'by Subscribe our Newsletter'
+                -
+                  handle: left_image
+                  field:
+                    type: assets
+                    display: Left decorative image
+                    container: assets
+                    max_files: 1
+                -
+                  handle: right_image
+                  field:
+                    type: assets
+                    display: Right decorative image
+                    container: assets
+                    max_files: 1
+
+            image_text:
+              display: Image and text
+              fields:
+                -
+                  handle: subtitle
+                  field:
+                    type: text
+                    display: Subtitle / kicker
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                -
+                  handle: text
+                  field:
+                    type: textarea
+                    display: Text
+                -
+                  handle: button_label
+                  field:
+                    type: text
+                    display: Button label
+                -
+                  handle: button_url
+                  field:
+                    type: text
+                    display: Button URL
+                -
+                  handle: image
+                  field:
+                    type: assets
+                    display: Image
+                    container: assets
+                    max_files: 1
+
+            testimonials:
+              display: Testimonials
+              fields:
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                    default: "Customer's review"
+                -
+                  handle: items
+                  field:
+                    type: grid
+                    display: Testimonials
+                    fields:
+                      -
+                        handle: text
+                        field:
+                          type: textarea
+                          display: Quote
+                      -
+                        handle: name
+                        field:
+                          type: text
+                          display: Name
+                      -
+                        handle: image
+                        field:
+                          type: assets
+                          display: Photo
+                          container: assets
+                          max_files: 1
+                      -
+                        handle: right_image
+                        field:
+                          type: assets
+                          display: Right panel image
+                          container: assets
+                          max_files: 1
+
+            shop_social:
+              display: Shop social + newsletter (V3)
+              fields:
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Social heading
+                    default: 'Shop Social'
+                -
+                  handle: text
+                  field:
+                    type: textarea
+                    display: Social text
+                -
+                  handle: newsletter_heading
+                  field:
+                    type: text
+                    display: Newsletter heading
+                    default: 'Get the Latest Deals'
+                -
+                  handle: newsletter_text
+                  field:
+                    type: text
+                    display: Newsletter text
+
+            instagram_grid:
+              display: Instagram grid (V3)
+              fields:
+                -
+                  handle: images
+                  field:
+                    type: assets
+                    display: Instagram images
+                    container: assets
+                    max_files: 8
+
+            blogs:
+              display: Blog listing / section
+              fields:
+                -
+                  handle: style
+                  field:
+                    type: select
+                    display: Style
+                    default: home_one
+                    options:
+                      home_one: Home V1 (3 column)
+                      home_two: Home V2 (3 column)
+                      home_three: Home V3 (2 column)
+                      grid: Blog grid (with sidebar)
+                      grid_two: Blog grid 2 (with sidebar)
+                      classic: Blog classic (with sidebar)
+                -
+                  import: section_heading
+                -
+                  handle: limit
+                  field:
+                    type: integer
+                    display: Number of posts (home styles)
+                    default: 3
+                -
+                  handle: show_load_more
+                  field:
+                    type: toggle
+                    display: Show load more
+                    default: false
+
+            legal_copy:
+              display: Legal / long copy
+              fields:
+                -
+                  import: section_heading
+                -
+                  handle: body
+                  field:
+                    type: markdown
+                    display: Content
+                    automatic_line_breaks: true
+
+            pages_index:
+              display: Pages index (sitemap)
+              fields:
+                -
+                  import: section_heading
+
+            categories_grid:
+              display: Categories grid
+              fields:
+                -
+                  import: section_heading
+
+        about:
+          display: About
+          sets:
+            about_content:
+              display: About content
+              fields:
+                -
+                  handle: full_image
+                  field:
+                    type: assets
+                    display: Full-width image
+                    container: assets
+                    max_files: 1
+                -
+                  handle: intro_heading
+                  field:
+                    type: text
+                    display: Intro heading
+                -
+                  handle: intro_text
+                  field:
+                    type: textarea
+                    display: Intro text
+                -
+                  handle: body_heading
+                  field:
+                    type: text
+                    display: Body heading
+                -
+                  handle: body_text
+                  field:
+                    type: textarea
+                    display: Body text
+                -
+                  handle: small_image
+                  field:
+                    type: assets
+                    display: Small image
+                    container: assets
+                    max_files: 1
+                -
+                  handle: features
+                  field:
+                    type: grid
+                    display: Feature list
+                    fields:
+                      -
+                        handle: icon
+                        field:
+                          type: assets
+                          display: Icon
+                          container: assets
+                          max_files: 1
+                      -
+                        handle: title
+                        field:
+                          type: text
+                          display: Title
+                      -
+                        handle: text
+                        field:
+                          type: text
+                          display: Text
+
+            about_video:
+              display: About video
+              fields:
+                -
+                  handle: poster
+                  field:
+                    type: assets
+                    display: Poster image
+                    container: assets
+                    max_files: 1
+                -
+                  handle: video_url
+                  field:
+                    type: text
+                    display: Video URL (YouTube / Vimeo)
+                -
+                  handle: play_icon
+                  field:
+                    type: assets
+                    display: Play icon (optional)
+                    container: assets
+                    max_files: 1
+
+            team:
+              display: Team
+              fields:
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                    default: 'Our Team'
+                -
+                  handle: members
+                  field:
+                    type: grid
+                    display: Team members
+                    fields:
+                      -
+                        handle: name
+                        field:
+                          type: text
+                          display: Name
+                      -
+                        handle: role
+                        field:
+                          type: text
+                          display: Role
+                      -
+                        handle: bio
+                        field:
+                          type: textarea
+                          display: Bio
+                      -
+                        handle: image
+                        field:
+                          type: assets
+                          display: Photo
+                          container: assets
+                          max_files: 1
+
+        shop:
+          display: Shop
+          sets:
+            shop_listing:
+              display: Shop listing
+              fields:
+                -
+                  handle: style
+                  field:
+                    type: select
+                    display: Layout
+                    default: grid
+                    options:
+                      grid: Grid (with sidebar + filters)
+                      list: List (with sidebar + filters)
+                      right_sidebar: Right sidebar
+                      three_column: Three column
+
+        contact:
+          display: Contact
+          sets:
+            contact_form:
+              display: Contact form
+              fields:
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                    default: 'Contact Information'
+                -
+                  handle: text
+                  field:
+                    type: textarea
+                    display: Subtext
+                -
+                  handle: phone_numbers
+                  field:
+                    type: text
+                    display: Phone numbers (separate with comma)
+                -
+                  handle: emails
+                  field:
+                    type: text
+                    display: Emails (separate with comma)
+                -
+                  handle: address
+                  field:
+                    type: text
+                    display: Address
+                -
+                  handle: map_embed
+                  field:
+                    type: textarea
+                    display: Map embed URL (src attribute)
+                -
+                  handle: show_social
+                  field:
+                    type: toggle
+                    display: Show social icons
+                    default: false
+
+        faqs:
+          display: FAQs
+          sets:
+            faqs:
+              display: FAQ accordion
+              fields:
+                -
+                  import: section_heading
+                -
+                  handle: groups
+                  field:
+                    type: grid
+                    display: FAQ groups
+                    fields:
+                      -
+                        handle: group_title
+                        field:
+                          type: text
+                          display: Group title
+                      -
+                        handle: items
+                        field:
+                          type: grid
+                          display: FAQ items
+                          fields:
+                            -
+                              handle: question
+                              field:
+                                type: text
+                                display: Question
+                            -
+                              handle: answer
+                              field:
+                                type: textarea
+                                display: Answer

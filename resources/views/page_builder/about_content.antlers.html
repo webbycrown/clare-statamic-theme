@@ -1,0 +1,56 @@
+<!-- About content section -->
+<section class="about-content-section section-two">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="about-content-wrap">
+					{{ if full_image }}
+					<img src="{{ partial:partials/media-url :file='full_image' }}" alt="about banner img" class="full-img">
+					{{ else }}
+					<img src="/assets/images/about-full-img.jpg" alt="about banner img" class="full-img">
+					{{ /if }}
+					<div class="about-content">
+						{{ if intro_heading }}<h2>{{ intro_heading }}</h2>{{ /if }}
+						{{ if intro_text }}<p>{{ intro_text }}</p>{{ /if }}
+					</div>
+					<div class="row align-items-center mt-md-5">
+						<div class="col-12 col-md-6">
+							{{ if small_image }}
+							<img src="{{ partial:partials/media-url :file='small_image' }}" alt="about small img">
+							{{ else }}
+							<img src="/assets/images/about-small-img.jpg" alt="about small img">
+							{{ /if }}
+						</div>
+						<div class="col-12 col-md-6">
+							{{ if features }}
+							<div class="about-service-list">
+								{{ if body_heading }}<h2>{{ body_heading }}</h2>{{ /if }}
+								<ul>
+									{{ features }}
+									<li>
+										{{ if icon }}
+										<div class="icon"><img src="{{ partial:partials/media-url :file='icon' }}" alt="{{ title }}"></div>
+										{{ /if }}
+										<div class="about-service-info">
+											<h5>{{ title }}</h5>
+											{{ if text }}<p>{{ text }}</p>{{ /if }}
+										</div>
+									</li>
+									{{ /features }}
+								</ul>
+							</div>
+							{{ /if }}
+						</div>
+					</div>
+					{{ if body_text }}
+					<div class="about-content">
+						{{ if body_heading and !features }}<h2>{{ body_heading }}</h2>{{ /if }}
+						<p>{{ body_text }}</p>
+					</div>
+					{{ /if }}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--/ End About content section -->

@@ -1,0 +1,83 @@
+<!-- Contact us page section -->
+<section class="contact-us-page-section section-two">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="module-header">
+					<div class="module-header-left">
+						<h2 class="entry-title">{{ heading ?? 'Contact Information' }}</h2>
+						{{ if text }}<p>{{ text }}</p>{{ /if }}
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12 col-lg-6">
+						<div class="contact-information">
+								{{ if phone_numbers }}
+							<div class="contact-information-box">
+								<div class="icon"><img src="/assets/images/contact-phone-icon.svg" alt="phone icon"></div>
+								<div class="information">
+									<h4>Phone number</h4>
+									<p>{{ phone_numbers }}</p>
+								</div>
+							</div>
+							{{ /if }}
+							{{ if emails }}
+							<div class="contact-information-box">
+								<div class="icon"><img src="/assets/images/contact-email-icon.svg" alt="email icon"></div>
+								<div class="information">
+									<h4>Email address</h4>
+									<p>{{ emails }}</p>
+								</div>
+							</div>
+							{{ /if }}
+							{{ if address }}
+							<div class="information-full-box">
+								<div class="contact-information-box">
+									<div class="icon"><img src="/assets/images/contact-address-icon.svg" alt="address icon"></div>
+									<div class="information">
+										<h4>Office Location</h4>
+										<p>{{ address }}</p>
+									</div>
+								</div>
+								{{ if map_embed }}
+								<div class="contact-map">
+									<iframe src="{{ map_embed }}" height="320" style="border:0; width: 100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+								</div>
+								{{ /if }}
+							</div>
+							{{ /if }}
+						</div>
+					</div>
+					<div class="col-12 col-lg-6">
+						<div class="contact-form" id="clare-contact-form">
+							{{ form:contact_us action="/!/forms/contact_us" class="js-clare-contact" }}
+							<div class="clare-form-msg mb-4" hidden></div>
+							{{ if success }}<p class="mb-4 clare-form-success">Message sent. We will get back to you shortly.</p>{{ /if }}
+							{{ if errors }}<ul class="mb-4">{{ errors }}<li>{{ value }}</li>{{ /errors }}</ul>{{ /if }}
+							<input type="text" name="fax" class="d-none" tabindex="-1" autocomplete="off">
+							<div class="form-group">
+								<label for="ContactFullname">Full name*</label>
+								<input type="text" class="form-control" id="ContactFullname" name="full_name" value="{{ old:full_name }}" required>
+							</div>
+							<div class="form-group">
+								<label for="ContactEmail">Email*</label>
+								<input type="email" class="form-control" id="ContactEmail" name="email" value="{{ old:email }}" required>
+							</div>
+							<div class="form-group">
+								<label for="ContactSubject">Subject*</label>
+								<input type="text" class="form-control" id="ContactSubject" name="subject" value="{{ old:subject }}" required>
+							</div>
+							<div class="form-group">
+								<label for="ContactMessage">Message</label>
+								<textarea class="form-control" id="ContactMessage" name="message" required>{{ old:message }}</textarea>
+							</div>
+							<button type="submit" class="btn btn-dark btn-style-2">Submit</button>
+							{{ /form:contact_us }}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--/ End Contact us page section -->

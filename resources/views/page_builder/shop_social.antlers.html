@@ -1,0 +1,44 @@
+<!-- Shop Social section -->
+<section class="shop-social-section section-all">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-md-6">
+				<div class="shop-social-left">
+					<h2 class="entry-title">{{ heading ?? 'Shop Social' }}</h2>
+					{{ if text }}<p>{{ text }}</p>{{ /if }}
+					{{ setting }}
+					{{ if facebook_url or instagram_url or youtube_url or whatsapp_url or pinterest_url }}
+					<div class="shop-social-icon">
+						<ul>
+							{{ if facebook_url }}<li><a href="{{ facebook_url }}"><i class="fa-brands fa-facebook"></i></a></li>{{ /if }}
+							{{ if instagram_url }}<li><a href="{{ instagram_url }}"><i class="fa-brands fa-instagram"></i></a></li>{{ /if }}
+							{{ if youtube_url }}<li><a href="{{ youtube_url }}"><i class="fa-brands fa-youtube"></i></a></li>{{ /if }}
+							{{ if whatsapp_url }}<li><a href="{{ whatsapp_url }}"><i class="fa-brands fa-whatsapp"></i></a></li>{{ /if }}
+							{{ if pinterest_url }}<li><a href="{{ pinterest_url }}"><i class="fa-brands fa-pinterest"></i></a></li>{{ /if }}
+						</ul>
+					</div>
+					{{ else }}
+					<div class="shop-social-icon">
+						<ul>
+							<li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+							<li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+							<li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+							<li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+							<li><a href="#"><i class="fa-brands fa-pinterest"></i></a></li>
+						</ul>
+					</div>
+					{{ /if }}
+					{{ /setting }}
+				</div>
+			</div>
+			<div class="col-12 col-md-6">
+				<div class="get-the-latest-deals">
+					<h2 class="entry-title">{{ newsletter_heading ?? 'Get the Latest Deals' }}</h2>
+					{{ if newsletter_text }}<p>{{ newsletter_text }}</p>{{ /if }}
+					{{ partial:newsletter-form button_class="btn btn-light" button_label="Submit" }}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--/ End Shop Social section -->
